@@ -1,0 +1,1384 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: yzk.0.0.1\n"
+"POT-Creation-Date: 2011-03-28 21:23+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: alexey kondratyev <pom01@mail.ru>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: /controllers/campaigns_controller.php:17;17
+#: /controllers/clients_controller.php:17;17
+msgid "Companies"
+msgstr "Кампании"
+
+#: /controllers/campaigns_controller.php:39;39
+msgid "Campaigns"
+msgstr "Кампании"
+
+#: /controllers/campaigns_controller.php:122;122
+#: /views/campaigns/banner.ctp:69;69
+#: /views/campaigns/campaign.ctp:30;30
+msgid "Campaign"
+msgstr "Кампания"
+
+#: /controllers/campaigns_controller.php:163;163
+#: /views/campaigns/banner.ctp:70;70
+msgid "Banner"
+msgstr "Объявление"
+
+#: /controllers/clients_controller.php:38;38
+msgid "Clients"
+msgstr "Клиенты"
+
+#: /controllers/phrases_controller.php:17;38;17;38
+#: /views/campaigns/campaign.ctp:10;10
+msgid "Phrases"
+msgstr "Фразы"
+
+#: /plugins/users/controllers/groups_controller.php:19;19
+msgid "Groups data"
+msgstr ""
+
+#: /plugins/users/controllers/groups_controller.php:41;61;96;116;41;61;96;116
+msgid "Invalid group"
+msgstr ""
+
+#: /plugins/users/controllers/groups_controller.php:51;66;106;121;51;66;106;121
+msgid "The group has been saved"
+msgstr ""
+
+#: /plugins/users/controllers/groups_controller.php:54;69;109;124;54;69;109;124
+msgid "The group could not be saved. Please, try again."
+msgstr ""
+
+#: /plugins/users/controllers/groups_controller.php:79;134;79;134
+msgid "Invalid id for group"
+msgstr ""
+
+#: /plugins/users/controllers/groups_controller.php:83;138;83;138
+msgid "Group deleted"
+msgstr ""
+
+#: /plugins/users/controllers/groups_controller.php:86;141;86;141
+msgid "Group was not deleted"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:43;43
+msgid "Users data"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:195;195
+msgid "SignUp"
+msgstr "Регистрация"
+
+#: /plugins/users/controllers/users_controller.php:324;324
+#: /views/clients/index.ctp:51;51
+msgid "Login"
+msgstr "Логин"
+
+#: /plugins/users/controllers/users_controller.php:542;562;598;618;542;562;598;618
+msgid "Invalid user"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:552;567;608;623;552;567;608;623
+msgid "The user has been saved"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:555;570;611;626;555;570;611;626
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:580;636;580;636
+msgid "Invalid id for user"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:584;640;584;640
+msgid "User deleted"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:587;643;587;643
+msgid "User was not deleted"
+msgstr ""
+
+#: /plugins/users/views/elements/login_form.ctp:22;22
+#: /plugins/users/views/groups/view.ctp:38;38
+#: /plugins/users/views/users/reg.ctp:177;177
+#: /plugins/users/views/users/admin_index.ctp:21;21
+#: /plugins/users/views/users/register.ctp:82;89;82;89
+#: /plugins/users/views/users/search.ctp:18;18
+msgid "Email"
+msgstr "Email"
+
+#: /plugins/users/views/elements/login_form.ctp:31;31
+#: /plugins/users/views/groups/view.ctp:35;35
+#: /plugins/users/views/users/reg.ctp:101;101
+#: /views/elements/pageHead/quickLogin/quick_login.ctp:23;23
+#: /plugins/users/views/users/register.ctp:30;30
+msgid "Password"
+msgstr "Пароль"
+
+#: /plugins/users/views/elements/login_form.ctp:38;38
+msgid "Forgot?"
+msgstr "Забыли?"
+
+#: /plugins/users/views/elements/login_form.ctp:47;47
+#: /views/elements/pageHead/quickLogin/quick_login.ctp:39;39
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+#: /plugins/users/views/elements/login_form.ctp:56;56
+#: /plugins/users/views/groups/add.ctp:9;9
+#: /plugins/users/views/groups/edit.ctp:10;10
+#: /plugins/users/views/users/reg.ctp:263;263
+#: /views/elements/pageHead/quickLogin/quick_login.ctp:29;29
+#: /plugins/users/views/details/index.ctp:27;27
+#: /plugins/users/views/users/change_password.ctp:27;27
+#: /plugins/users/views/users/register.ctp:44;100;44;100
+#: /plugins/users/views/users/request_password_change.ctp:23;23
+#: /plugins/users/views/users/reset_password.ctp:7;7
+msgid "Submit"
+msgstr "Войти"
+
+#: /plugins/users/views/elements/login_form.ctp:65;65
+#: /views/elements/pageHead/topMenu/top_menu.ctp:30;40;30;40
+msgid "SignUp now"
+msgstr "Регистрация"
+
+#: /plugins/users/views/groups/add.ctp:4;4
+msgid "Add %s"
+msgstr "Добавить %s"
+
+#: /plugins/users/views/groups/add.ctp:4;4
+#: /plugins/users/views/groups/edit.ctp:4;4
+#: /plugins/users/views/groups/index.ctp:45;45
+#: /plugins/users/views/groups/view.ctp:2;19;20;22;2;19;20;22
+msgid "Group"
+msgstr ""
+
+#: /plugins/users/views/groups/add.ctp:12;12
+#: /plugins/users/views/groups/edit.ctp:13;13
+#: /plugins/users/views/groups/index.ctp:7;43;7;43
+#: /plugins/users/views/groups/view.ctp:17;42;17;42
+#: /plugins/users/views/details/admin_index.ctp:29;29
+#: /plugins/users/views/details/admin_view.ctp:76;76
+#: /plugins/users/views/details/view.ctp:76;76
+#: /plugins/users/views/users/admin_index.ctp:32;32
+#: /plugins/users/views/users/groups.ctp:26;61;26;61
+#: /plugins/users/views/users/index.ctp:24;24
+msgid "Actions"
+msgstr ""
+
+#: /plugins/users/views/groups/add.ctp:14;15;14;15
+#: /plugins/users/views/groups/edit.ctp:16;17;16;17
+#: /plugins/users/views/groups/index.ctp:46;46
+#: /plugins/users/views/groups/view.ctp:21;23;21;23
+msgid "List %s"
+msgstr ""
+
+#: /plugins/users/views/groups/add.ctp:14;14
+#: /plugins/users/views/groups/edit.ctp:16;16
+#: /plugins/users/views/groups/index.ctp:2;2
+#: /plugins/users/views/groups/view.ctp:21;21
+msgid "Groups"
+msgstr ""
+
+#: /plugins/users/views/groups/add.ctp:15;15
+#: /plugins/users/views/groups/edit.ctp:17;17
+#: /plugins/users/views/groups/index.ctp:46;46
+#: /plugins/users/views/groups/view.ctp:23;28;23;28
+#: /plugins/users/views/users/admin_index.ctp:13;13
+#: /plugins/users/views/users/index.ctp:13;13
+msgid "Users"
+msgstr ""
+
+#: /plugins/users/views/groups/add.ctp:16;16
+#: /plugins/users/views/groups/edit.ctp:18;18
+#: /plugins/users/views/groups/index.ctp:45;47;45;47
+#: /plugins/users/views/groups/view.ctp:22;24;75;22;24;75
+msgid "New %s"
+msgstr "Новый %s"
+
+#: /plugins/users/views/groups/add.ctp:16;16
+#: /plugins/users/views/groups/edit.ctp:18;18
+#: /plugins/users/views/groups/index.ctp:47;47
+#: /plugins/users/views/groups/view.ctp:24;75;24;75
+#: /plugins/users/views/details/admin_view.ctp:20;20
+#: /plugins/users/views/details/view.ctp:20;20
+#: /plugins/users/views/users/admin_view.ctp:13;13
+#: /plugins/users/views/users/view.ctp:13;13
+msgid "User"
+msgstr "Пользователь"
+
+#: /plugins/users/views/groups/edit.ctp:4;4
+#: /plugins/users/views/groups/view.ctp:19;19
+msgid "Edit %s"
+msgstr "Редактировать %s"
+
+#: /plugins/users/views/groups/edit.ctp:15;15
+#: /plugins/users/views/groups/index.ctp:23;23
+#: /plugins/users/views/groups/view.ctp:66;66
+#: /plugins/users/views/details/admin_edit.ctp:29;29
+#: /plugins/users/views/details/admin_index.ctp:64;64
+#: /plugins/users/views/details/admin_view.ctp:97;97
+#: /plugins/users/views/details/view.ctp:97;97
+#: /plugins/users/views/users/admin_edit.ctp:25;25
+#: /plugins/users/views/users/admin_index.ctp:58;58
+#: /plugins/users/views/users/groups.ctp:49;49
+#: /plugins/users/views/users/index.ctp:44;44
+msgid "Delete"
+msgstr "Удалить"
+
+#: /plugins/users/views/groups/edit.ctp:15;15
+#: /plugins/users/views/groups/index.ctp:23;23
+#: /plugins/users/views/groups/view.ctp:20;66;20;66
+#: /plugins/users/views/details/admin_edit.ctp:29;29
+#: /plugins/users/views/details/admin_index.ctp:64;64
+#: /plugins/users/views/details/admin_view.ctp:55;97;55;97
+#: /plugins/users/views/details/view.ctp:55;97;55;97
+#: /plugins/users/views/users/admin_edit.ctp:25;25
+#: /plugins/users/views/users/admin_index.ctp:58;58
+#: /plugins/users/views/users/admin_view.ctp:35;35
+#: /plugins/users/views/users/index.ctp:44;44
+msgid "Are you sure you want to delete # %s?"
+msgstr "Подтвердите удаление # %s?"
+
+#: /plugins/users/views/groups/index.ctp:21;21
+#: /plugins/users/views/groups/view.ctp:64;64
+#: /plugins/users/views/details/admin_index.ctp:62;62
+#: /plugins/users/views/details/admin_view.ctp:95;95
+#: /plugins/users/views/details/view.ctp:95;95
+#: /plugins/users/views/users/admin_index.ctp:56;56
+#: /plugins/users/views/users/index.ctp:42;42
+msgid "View"
+msgstr ""
+
+#: /plugins/users/views/groups/index.ctp:22;22
+#: /plugins/users/views/groups/view.ctp:65;65
+#: /plugins/users/views/details/admin_index.ctp:63;63
+#: /plugins/users/views/details/admin_view.ctp:96;96
+#: /plugins/users/views/details/view.ctp:96;96
+#: /plugins/users/views/users/admin_index.ctp:57;57
+#: /plugins/users/views/users/groups.ctp:44;44
+#: /plugins/users/views/users/index.ctp:43;43
+msgid "Edit"
+msgstr "Редактировать"
+
+#: /plugins/users/views/groups/index.ctp:31;31
+#: /plugins/users/views/details/admin_index.ctp:17;17
+#: /plugins/users/views/users/index.ctp:17;17
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: /plugins/users/views/groups/index.ctp:36;36
+#: /plugins/users/views/details/admin_index.ctp:71;71
+#: /plugins/users/views/users/index.ctp:51;51
+msgid "previous"
+msgstr ""
+
+#: /plugins/users/views/groups/index.ctp:39;39
+#: /plugins/users/views/details/admin_index.ctp:73;73
+#: /plugins/users/views/users/index.ctp:53;53
+msgid "next"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:4;32;4;32
+#: /plugins/users/views/details/admin_view.ctp:15;69;15;69
+#: /plugins/users/views/details/view.ctp:15;69;15;69
+msgid "Id"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:9;9
+#: /plugins/users/views/details/admin_view.ctp:72;72
+#: /plugins/users/views/details/view.ctp:72;72
+#: /plugins/users/views/users/groups.ctp:24;58;24;58
+#: /plugins/users/views/users/search.ctp:20;20
+msgid "Name"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:20;20
+msgid "Delete %s"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:28;28
+msgid "Related %s"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:33;33
+msgid "Group Id"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:34;34
+#: /plugins/users/views/users/reg.ctp:50;50
+#: /plugins/users/views/users/admin_index.ctp:19;19
+#: /plugins/users/views/users/admin_view.ctp:15;15
+#: /plugins/users/views/users/register.ctp:68;74;68;74
+#: /plugins/users/views/users/search.ctp:16;16
+#: /plugins/users/views/users/view.ctp:15;15
+msgid "Username"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:36;36
+msgid "Key"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:37;37
+msgid "Type"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:39;39
+msgid "Active"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:40;40
+#: /plugins/users/views/details/admin_view.ctp:40;74;40;74
+#: /plugins/users/views/details/view.ctp:40;74;40;74
+#: /plugins/users/views/users/admin_view.ctp:20;20
+#: /plugins/users/views/users/view.ctp:20;20
+msgid "Created"
+msgstr ""
+
+#: /plugins/users/views/groups/view.ctp:41;41
+#: /plugins/users/views/details/admin_view.ctp:45;75;45;75
+#: /plugins/users/views/details/view.ctp:45;75;45;75
+#: /plugins/users/views/users/admin_view.ctp:25;25
+msgid "Modified"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:17;17
+msgid "Only latin letters and integers"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:18;18
+msgid "Username can't include"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:19;27;32;19;27;32
+msgid "This field cannot be left blank"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:20;33;20;33
+msgid "Only alphabets and numbers allowed"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:21;21
+msgid "Username must be between 4 and 10 chars"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:22;22
+msgid "This username has already been taken"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:24;24
+msgid "Password must be between 4 and 15 chars"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:25;25
+msgid "Please verify your password again"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:28;28
+msgid "Should look like an email address"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:29;29
+msgid "This Email has already been taken"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:34;242;34;242
+msgid "Please, correct the code."
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:70;70
+msgid "Only letters and numbers, 16 char max."
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:75;75
+msgid "Checking availability..."
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:91;91
+msgid "Login is free"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:118;118
+msgid "6 characters or more"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:123;160;123;160
+msgid "Checking password"
+msgstr "Проверка пароля"
+
+#: /plugins/users/views/users/reg.ctp:135;135
+msgid "Confirm Password"
+msgstr "Подтвердить пароль"
+
+#: /plugins/users/views/users/reg.ctp:155;155
+msgid "Passwords must be equal"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:169;210;169;210
+msgid "Ok"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:197;197
+msgid "Enter valid Email"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:201;201
+msgid "Checking Email"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:230;230
+msgid "Couldn't see"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:234;234
+msgid "Please type in the code"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:239;239
+msgid "Type the letters from picture"
+msgstr ""
+
+#: /plugins/users/views/users/reset.ctp:4;4
+#: /plugins/users/views/users/request_password_change.ctp:12;12
+msgid "Forgot your password?"
+msgstr ""
+
+#: /plugins/users/views/users/reset.ctp:5;5
+msgid "Workroll will send password reset instructions to the email address associated with your account."
+msgstr ""
+
+#: /plugins/users/views/users/reset.ctp:23;23
+msgid "Send instructions"
+msgstr ""
+
+#: /views/campaigns/banner.ctp:15;15
+msgid "no mode set yet"
+msgstr ""
+
+#: /views/campaigns/banner.ctp:19;19
+msgid "eidt"
+msgstr "редактировать"
+
+#: /views/campaigns/banner.ctp:20;20
+msgid "del"
+msgstr "удалить"
+
+#: /views/campaigns/banner.ctp:22;22
+msgid "create"
+msgstr "создать"
+
+#: /views/campaigns/banner.ctp:47;47
+msgid "Save"
+msgstr "Сохранить"
+
+#: /views/campaigns/banner.ctp:48;48
+#: /views/clients/index.ctp:39;39
+msgid "Close"
+msgstr "Закрыть"
+
+#: /views/campaigns/banner.ctp:55;55
+#: /views/campaigns/campaign.ctp:24;24
+#: /views/campaigns/index.ctp:23;23
+msgid "clients"
+msgstr "клиетны"
+
+#: /views/campaigns/banner.ctp:56;56
+#: /views/campaigns/campaign.ctp:25;25
+msgid "campaigns"
+msgstr "кампании"
+
+#: /views/campaigns/banner.ctp:57;57
+#: /views/campaigns/campaign.ctp:26;26
+msgid "banners"
+msgstr ""
+
+#: /views/campaigns/banner.ctp:65;65
+msgid "phrases"
+msgstr ""
+
+#: /views/campaigns/banner.ctp:68;68
+#: /views/campaigns/campaign.ctp:29;29
+#: /views/campaigns/index.ctp:24;24
+msgid "Client"
+msgstr "Клиент"
+
+#: /views/campaigns/banner.ctp:74;74
+msgid "Set mode for all"
+msgstr ""
+
+#: /views/campaigns/banner.ctp:82;82
+#: /views/campaigns/campaign.ctp:43;43
+msgid "Phrase"
+msgstr "Фраза"
+
+#: /views/campaigns/banner.ctp:83;83
+#: /views/campaigns/index.ctp:34;34
+msgid "Shows"
+msgstr ""
+
+#: /views/campaigns/banner.ctp:84;84
+msgid "Price"
+msgstr "Цена"
+
+#: /views/campaigns/banner.ctp:85;85
+msgid "Mode"
+msgstr "Формула"
+
+#: /views/campaigns/banner.ctp:86;86
+msgid "Action"
+msgstr ""
+
+#: /views/campaigns/campaign.ctp:41;41
+msgid "Title"
+msgstr "Заголовок"
+
+#: /views/campaigns/index.ctp:23;23
+msgid "campagins"
+msgstr ""
+
+#: /views/campaigns/index.ctp:32;32
+msgid "Campaing"
+msgstr "Кампания"
+
+#: /views/campaigns/index.ctp:33;33
+msgid "Clicks"
+msgstr "Клики"
+
+#: /views/campaigns/index.ctp:35;35
+msgid "StartDate"
+msgstr ""
+
+#: /views/campaigns/index.ctp:36;36
+msgid "Sum"
+msgstr ""
+
+#: /views/clients/index.ctp:20;20
+msgid "reg"
+msgstr ""
+
+#: /views/clients/index.ctp:22;22
+msgid "view"
+msgstr ""
+
+#: /views/clients/index.ctp:31;31
+msgid "Registation form for client"
+msgstr ""
+
+#: /views/clients/index.ctp:32;32
+msgid "Client's yandex login"
+msgstr ""
+
+#: /views/clients/index.ctp:34;34
+msgid "Email: "
+msgstr ""
+
+#: /views/clients/index.ctp:38;38
+msgid "Send"
+msgstr ""
+
+#: /views/clients/index.ctp:44;44
+msgid "Clients list for agancy:"
+msgstr ""
+
+#: /views/clients/index.ctp:52;52
+msgid "FIO"
+msgstr ""
+
+#: /views/clients/index.ctp:53;53
+msgid "Phone"
+msgstr ""
+
+#: /views/clients/index.ctp:54;54
+msgid "Discount"
+msgstr ""
+
+#: /views/clients/index.ctp:55;55
+msgid "Reg Status"
+msgstr ""
+
+#: /views/elements/email/html/simple_message.ctp:1;1
+msgid "Your Login"
+msgstr ""
+
+#: /views/elements/email/html/simple_message.ctp:2;2
+msgid "Your Password"
+msgstr ""
+
+#: /views/elements/pageHead/page_head.ctp:4;4
+msgid "All"
+msgstr ""
+
+#: /views/elements/pageHead/page_head.ctp:22;22
+msgid "My project"
+msgstr ""
+
+#: /views/elements/pageHead/page_head.ctp:26;26
+msgid "projects"
+msgstr ""
+
+#: /views/elements/pageHead/page_head.ctp:34;34
+msgid "New"
+msgstr ""
+
+#: /views/elements/pageHead/page_head.ctp:34;34
+msgid "task"
+msgstr ""
+
+#: /views/elements/pageHead/quickLogin/quick_login.ctp:16;16
+msgid "Username or email"
+msgstr ""
+
+#: /views/elements/pageHead/quickLogin/quick_login.ctp:48;48
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: /views/elements/pageHead/topMenu/top_menu.ctp:10;10
+msgid "Profile"
+msgstr ""
+
+#: /views/elements/pageHead/topMenu/top_menu.ctp:13;13
+msgid "Settings"
+msgstr ""
+
+#: /views/elements/pageHead/topMenu/top_menu.ctp:16;16
+msgid "LogOut now"
+msgstr "Выход"
+
+#: /views/elements/pageHead/topMenu/top_menu.ctp:20;20
+msgid "Already on"
+msgstr ""
+
+#: /views/elements/pageHead/topMenu/top_menu.ctp:22;27;37;22;27;37
+msgid "LogIn now"
+msgstr ""
+
+#: /webroot/test.php:88;88
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
+#: /plugins/debug_kit/controllers/components/toolbar.php:99;99
+msgid "Component intitailization"
+msgstr ""
+
+#: /plugins/debug_kit/controllers/components/toolbar.php:100;100
+msgid "Component initialization and startup"
+msgstr ""
+
+#: /plugins/debug_kit/controllers/components/toolbar.php:170;170
+msgid "Controller action"
+msgstr ""
+
+#: /plugins/debug_kit/controllers/components/toolbar.php:171;171
+msgid "Controller action start"
+msgstr ""
+
+#: /plugins/debug_kit/controllers/components/toolbar.php:199;199
+msgid "Render Controller Action"
+msgstr ""
+
+#: /plugins/debug_kit/controllers/components/toolbar.php:200;200
+msgid "Controller render start"
+msgstr ""
+
+#: /plugins/debug_kit/controllers/components/toolbar.php:266;266
+msgid "Could not load DebugToolbar panel %s"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/debug_kit_debugger.php:185;185
+msgid "Core Processing (Derived)"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/fire_cake.php:297;297
+msgid "Headers already sent in %s on line %s. Cannot send log data to FirePHP."
+msgstr ""
+
+#: /plugins/debug_kit/vendors/fire_cake.php:318;318
+msgid "Incorrect parameter count for FireCake::fb()"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/fire_cake.php:397;397
+msgid "Maximum number (99,999) of messages reached!"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:50;50
+msgid "-> Testing :url"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:76;76
+msgid "Total Requests made: :requests"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:77;77
+msgid "Total Time elapsed: :duration (seconds)"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:81;81
+msgid "Requests/Second: :rps req/sec"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:85;85
+msgid "Average request time: :average-time seconds"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:89;89
+msgid "Standard deviation of average request time: :std-dev"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:93;93
+msgid "Longest/shortest request: :longest sec/:shortest sec"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:145;145
+msgid "DebugKit Benchmark Shell"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:147;147
+msgid ""
+"\tAllows you to obtain some rough benchmarking statistics \n"
+"\tabout a fully qualified URL."
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:149;149
+msgid "\tUse:"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:150;150
+msgid "\t\tcake benchmark [-n iterations] [-t timeout] url"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:152;152
+msgid "\tParams:"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:153;153
+msgid ""
+"\t\t-n Number of iterations to perform. Defaults to 10. \n"
+"\t\t   Must be an integer."
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:154;154
+msgid ""
+"\t\t-t Maximum total time for all iterations, in seconds. \n"
+"\t\t   Defaults to 100. Must be an integer."
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:156;156
+msgid ""
+"\tIf a single iteration takes more than the \n"
+"\ttimeout specified, only one request will be made."
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:158;158
+msgid "\tExample Use:"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:159;159
+msgid "\t\tcake benchmark -n 10 -t 100 http://localhost/testsite"
+msgstr ""
+
+#: /plugins/debug_kit/vendors/shells/benchmark.php:161;161
+msgid "\tNote that this benchmark does not include browser render time"
+msgstr ""
+
+#: /plugins/debug_kit/views/debug.php:41;41
+msgid "Rendering %s"
+msgstr ""
+
+#: /plugins/debug_kit/views/debug.php:63;63
+msgid "Starting to render"
+msgstr ""
+
+#: /plugins/debug_kit/views/debug.php:67;67
+msgid "Finished"
+msgstr ""
+
+#: /plugins/debug_kit/views/debug.php:83;83
+msgid "Rendering View"
+msgstr ""
+
+#: /plugins/debug_kit/views/debug.php:89;89
+msgid "View render complete"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/debug_toolbar.ctp:25;25
+msgid "There are no active panels. You must enable a panel to see its output."
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/history_panel.ctp:21;21
+msgid "Request History"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/history_panel.ctp:23;23
+msgid "No previous requests logged."
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/history_panel.ctp:25;25
+msgid "previous requests available"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/history_panel.ctp:27;27
+msgid "Restore to current request"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/log_panel.ctp:21;21
+msgid "Logs"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/log_panel.ctp:28;28
+msgid "Time"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/log_panel.ctp:28;28
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:40;64;40;64
+msgid "Message"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/log_panel.ctp:37;37
+msgid "There were no log entries made this request"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/request_panel.ctp:21;21
+msgid "Request"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/request_panel.ctp:35;35
+msgid "Current Route"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/session_panel.ctp:21;21
+msgid "Session"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/sql_log_panel.ctp:25;25
+msgid "Sql Logs"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/sql_log_panel.ctp:40;40
+msgid "Query Explain:"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/sql_log_panel.ctp:43;43
+msgid "Click an \"Explain\" link above, to see the query explanation."
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/sql_log_panel.ctp:48;48
+msgid "No active database connections"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:33;33
+msgid "Memory"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:36;36
+msgid "Peak Memory Use"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:40;40
+msgid "Memory use"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:53;53
+msgid "Timers"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:55;55
+msgid "%s (ms)"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:56;56
+msgid "Total Request Time:"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:65;65
+msgid "Time in ms"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/timer_panel.ctp:66;66
+msgid "Graph"
+msgstr ""
+
+#: /plugins/debug_kit/views/elements/variables_panel.ctp:21;21
+msgid "View Variables"
+msgstr ""
+
+#: /plugins/debug_kit/views/helpers/html_toolbar.php:182;182
+msgid "Explain"
+msgstr ""
+
+#: /plugins/debug_kit/views/helpers/simple_graph.php:77;77
+msgid "Starting %sms into the request, taking %sms"
+msgstr ""
+
+#: /plugins/debug_kit/views/helpers/toolbar.php:158;158
+msgid "maybe slow"
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:57;145;57;145
+msgid "Invalid Detail."
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:79;79
+msgid "Saved"
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:100;100
+msgid "%s details saved"
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:118;206;118;206
+msgid "Invalid id for Detail"
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:122;210;122;210
+msgid "Detail deleted"
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:160;184;160;184
+msgid "The Detail has been saved"
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:163;187;163;187
+msgid "The Detail could not be saved. Please, try again."
+msgstr ""
+
+#: /plugins/users/controllers/details_controller.php:179;179
+msgid "Invalid Detail"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:200;200
+msgid "You are already registered and logged in!"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:216;216
+msgid "Registration hasn't been opened yet. Sorry for inconvinience"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:229;229
+msgid "Your account has been created."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:248;248
+msgid "New user's accout hasn't been created"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:271;271
+msgid "There url you accessed is not longer valid"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:289;289
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:231;231
+msgid "Your e-mail has been validated!"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:292;292
+msgid "There was an error trying to validate your e-mail address. Please check your e-mail for the URL you should use to verify your e-mail address."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:296;296
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:236;236
+msgid "The url you accessed is not longer valid"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:311;311
+msgid "Password changed."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:353;353
+msgid "%s you u have successfully logged in"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:374;374
+msgid "Check your login and password"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:385;385
+msgid "Good bay, %s"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:425;425
+msgid "Password Reset"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:454;454
+msgid "%s has been sent an email with instruction to reset their password."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:457;457
+msgid "You should receive an email with further instructions shortly"
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:461;461
+msgid "No user was found with that email."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:477;477
+msgid "Invalid password reset token, try again."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:483;483
+msgid "Password changed, you can now login with your new password."
+msgstr ""
+
+#: /plugins/users/controllers/users_controller.php:505;505
+msgid "Account verification"
+msgstr ""
+
+#: /plugins/users/models/user.php:306;306
+msgid "This Email Address exists but was never validated."
+msgstr ""
+
+#: /plugins/users/models/user.php:308;308
+msgid "This Email Address does not exist in the system."
+msgstr ""
+
+#: /plugins/users/models/user.php:462;462
+msgid "Invalid password."
+msgstr ""
+
+#: /plugins/users/models/user.php:489;489
+msgid "$this->data['"
+msgstr ""
+
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:48;48
+msgid "Sorry, but you need to login to access this location."
+msgstr ""
+
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:49;188;49;188
+msgid "Invalid e-mail / password combination.  Please try again"
+msgstr ""
+
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:182;182
+msgid "testuser you have successfully logged in"
+msgstr ""
+
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:207;207
+msgid "Your account has been created. You should receive an e-mail shortly to authenticate your account. Once validated you will be able to login."
+msgstr ""
+
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:218;218
+msgid "Your account could not be created. Please, try again."
+msgstr ""
+
+#: /plugins/users/tests/cases/controllers/users_controller.test.php:248;248
+msgid "floriank you have successfully logged out"
+msgstr ""
+
+#: /plugins/users/views/details/add.ctp:15;15
+#: /plugins/users/views/details/admin_add.ctp:15;15
+msgid "Add Detail"
+msgstr ""
+
+#: /plugins/users/views/details/add.ctp:28;28
+#: /plugins/users/views/details/admin_add.ctp:28;28
+#: /plugins/users/views/details/admin_edit.ctp:30;30
+#: /plugins/users/views/details/admin_view.ctp:56;56
+#: /plugins/users/views/details/view.ctp:56;56
+msgid "List Details"
+msgstr ""
+
+#: /plugins/users/views/details/add.ctp:29;29
+#: /plugins/users/views/details/admin_add.ctp:29;29
+#: /plugins/users/views/details/admin_edit.ctp:31;31
+#: /plugins/users/views/details/admin_index.ctp:78;78
+#: /plugins/users/views/details/admin_view.ctp:58;58
+#: /plugins/users/views/details/view.ctp:58;58
+#: /plugins/users/views/users/add.ctp:26;26
+#: /plugins/users/views/users/admin_add.ctp:24;24
+#: /plugins/users/views/users/admin_edit.ctp:26;26
+#: /plugins/users/views/users/admin_view.ctp:36;36
+msgid "List Users"
+msgstr ""
+
+#: /plugins/users/views/details/add.ctp:30;30
+#: /plugins/users/views/details/admin_add.ctp:30;30
+#: /plugins/users/views/details/admin_edit.ctp:32;32
+#: /plugins/users/views/details/admin_index.ctp:79;79
+#: /plugins/users/views/details/admin_view.ctp:59;59
+#: /plugins/users/views/details/view.ctp:59;59
+#: /plugins/users/views/users/admin_view.ctp:37;37
+#: /plugins/users/views/users/index.ctp:57;57
+msgid "New User"
+msgstr ""
+
+#: /plugins/users/views/details/add.ctp:31;31
+#: /plugins/users/views/details/admin_add.ctp:31;31
+#: /plugins/users/views/details/admin_edit.ctp:33;33
+#: /plugins/users/views/details/admin_index.ctp:80;80
+#: /plugins/users/views/details/admin_view.ctp:60;60
+#: /plugins/users/views/details/view.ctp:60;60
+msgid "List Groups"
+msgstr ""
+
+#: /plugins/users/views/details/add.ctp:32;32
+#: /plugins/users/views/details/admin_add.ctp:32;32
+#: /plugins/users/views/details/admin_edit.ctp:34;34
+#: /plugins/users/views/details/admin_index.ctp:81;81
+#: /plugins/users/views/details/admin_view.ctp:61;106;61;106
+#: /plugins/users/views/details/view.ctp:61;106;61;106
+msgid "New Group"
+msgstr ""
+
+#: /plugins/users/views/details/admin_edit.ctp:15;15
+#: /plugins/users/views/details/admin_view.ctp:54;54
+#: /plugins/users/views/details/edit.ctp:16;16
+#: /plugins/users/views/details/view.ctp:54;54
+msgid "Edit Detail"
+msgstr ""
+
+#: /plugins/users/views/details/admin_index.ctp:13;13
+#: /plugins/users/views/users/register.ctp:15;15
+msgid "Details"
+msgstr ""
+
+#: /plugins/users/views/details/admin_index.ctp:77;77
+#: /plugins/users/views/details/admin_view.ctp:57;57
+#: /plugins/users/views/details/view.ctp:57;57
+msgid "New Detail"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:13;13
+#: /plugins/users/views/details/view.ctp:13;13
+msgid "Detail"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:25;25
+#: /plugins/users/views/details/view.ctp:25;25
+msgid "Position"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:30;30
+#: /plugins/users/views/details/view.ctp:30;30
+msgid "Field"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:35;35
+#: /plugins/users/views/details/view.ctp:35;35
+msgid "Value"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:55;55
+#: /plugins/users/views/details/view.ctp:55;55
+msgid "Delete Detail"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:65;65
+#: /plugins/users/views/details/view.ctp:65;65
+msgid "Related Groups"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:70;70
+#: /plugins/users/views/details/view.ctp:70;70
+msgid "User Id"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:71;71
+#: /plugins/users/views/details/view.ctp:71;71
+msgid "Is Public"
+msgstr ""
+
+#: /plugins/users/views/details/admin_view.ctp:73;73
+#: /plugins/users/views/details/view.ctp:73;73
+#: /plugins/users/views/users/groups.ctp:59;59
+msgid "Description"
+msgstr ""
+
+#: /plugins/users/views/elements/email/text/account_verification.ctp:12;12
+msgid "Hello %s,"
+msgstr ""
+
+#: /plugins/users/views/elements/email/text/account_verification.ctp:14;14
+msgid "to validate your account, you must visit the URL below within 24 hours"
+msgstr ""
+
+#: /plugins/users/views/elements/email/text/password_reset_request.ctp:12;12
+msgid "A request to reset your password was sent. To change your password click the link below."
+msgstr ""
+
+#: /plugins/users/views/users/add.ctp:15;15
+#: /plugins/users/views/users/admin_add.ctp:15;15
+msgid "Add User"
+msgstr ""
+
+#: /plugins/users/views/users/admin_edit.ctp:15;15
+#: /plugins/users/views/users/admin_view.ctp:34;34
+#: /plugins/users/views/users/edit.ctp:14;14
+msgid "Edit User"
+msgstr ""
+
+#: /plugins/users/views/users/admin_index.ctp:15;15
+msgid "Filter"
+msgstr ""
+
+#: /plugins/users/views/users/admin_index.ctp:22;22
+#: /plugins/users/views/users/search.ctp:21;21
+msgid "Search"
+msgstr ""
+
+#: /plugins/users/views/users/admin_view.ctp:35;35
+msgid "Delete User"
+msgstr ""
+
+#: /plugins/users/views/users/change_password.ctp:12;12
+msgid "Change your password"
+msgstr ""
+
+#: /plugins/users/views/users/change_password.ctp:14;14
+msgid "Please enter your old password because of security reasons and then your new password twice."
+msgstr ""
+
+#: /plugins/users/views/users/change_password.ctp:19;19
+msgid "Old Password"
+msgstr ""
+
+#: /plugins/users/views/users/change_password.ctp:22;22
+#: /plugins/users/views/users/reset_password.ctp:5;5
+msgid "New Password"
+msgstr ""
+
+#: /plugins/users/views/users/change_password.ctp:25;25
+#: /plugins/users/views/users/reset_password.ctp:6;6
+msgid "Confirm"
+msgstr ""
+
+#: /plugins/users/views/users/dashboard.ctp:13;13
+msgid "Welcome"
+msgstr ""
+
+#: /plugins/users/views/users/dashboard.ctp:14;14
+msgid "Recent broadcasts"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:13;13
+msgid "My Groups"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:16;16
+msgid "Create a new group"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:17;17
+msgid "Invite a user"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:18;18
+msgid "Requests to join"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:21;21
+msgid "My own groups"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:25;60;25;60
+msgid "Members"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:45;45
+msgid "Invite user"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:46;46
+msgid "Manage Broadcast Scope"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:47;47
+msgid "Access"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:48;48
+msgid "Addons"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:55;55
+msgid "Groups im a member in"
+msgstr ""
+
+#: /plugins/users/views/users/groups.ctp:79;79
+msgid "Leave group"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:37;37
+#: /plugins/users/views/users/register.ctp:41;97;41;97
+msgid "You must verify you have read the Terms of Service"
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:255;255
+#: /plugins/users/views/users/register.ctp:40;96;40;96
+msgid "I have read and agreed to "
+msgstr ""
+
+#: /plugins/users/views/users/reg.ctp:255;255
+#: /plugins/users/views/users/register.ctp:40;96;40;96
+msgid "Terms of Service"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:13;13
+msgid "Account registration"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:21;21
+msgid "Please select a username that is not already in use"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:22;22
+msgid "Must be at least 3 characters"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:23;23
+msgid "Username must contain numbers and letters only"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:24;24
+msgid "Please choose username"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:26;26
+msgid "E-mail (used as login)"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:27;27
+msgid "Must be a valid email address"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:28;28
+msgid "An account with that email already exists"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:32;32
+msgid "Must be at least 5 characters long"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:34;34
+msgid "Password (confirm)"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:36;36
+msgid "Passwords must match"
+msgstr ""
+
+#: /plugins/users/views/users/register.ctp:57;57
+msgid "Openid Identifier"
+msgstr ""
+
+#: /plugins/users/views/users/request_password_change.ctp:14;14
+msgid "Please enter the email you used for registration and you'll get an email with further instructions."
+msgstr ""
+
+#: /plugins/users/views/users/request_password_change.ctp:22;22
+msgid "Your Email"
+msgstr ""
+
+#: /plugins/users/views/users/reset_password.ctp:1;1
+msgid "Reset your password"
+msgstr ""
+
+#: /plugins/users/views/users/search.ctp:12;12
+msgid "Search for users"
+msgstr ""
+

@@ -1,0 +1,32 @@
+/* 
+    Document   : yzk-lt
+    Created on : 15.02.2011, 17:45:22
+    Author     : akv
+    Description:
+        layouts styles
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.lt-pageheader { 
+  margin: 4px 0;    
+}
+.lt-pagefooter{
+    color: blue;
+}
+.lt-footerNote{
+    border-top: 1px solid;
+    color: green;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+.lt-topMenu{
+    color:green;
+    margin-right: 1em;
+    float:left;
+}
+
+

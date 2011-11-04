@@ -1,0 +1,243 @@
+/* 
+    Document   : yzk-cmp
+    Created on : Mar 7, 2011, 9:06:43 PM
+    Author     : kondratyev
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+.cmp-client{
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding: 4px 0;
+}
+.cmp-clientStop, .cmp-clientStop a{
+    background-color: lightGrey;
+    color: gray;
+}
+.cmp-clientStop a:hover{
+    color: #0099ff;
+}
+
+/*
+.cmp-client:hover{
+    background-color: #E6EFC2;
+    border-bottom: 1px solid #ddd;
+}
+*/
+.cmp-clientActive{
+    color: goldenrod;
+    background-color: SeaShell;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+}
+.cmp-modes{
+    /*float: left;
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    */
+    border: 2px solid #ddd;
+    background-color: #529214;
+    padding: 2px 20px;
+    margin: 5px 0;
+        
+    z-index: 1000;
+}
+.cmp-edit, .cmp-delete{
+    background-color: #eee;
+    border: 1px solid #ddd;
+    color: gray;
+    text-align: center;
+    margin: 5px 0;
+    cursor: pointer;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.cmp-modesEditWrp .cmp-modes{
+    background-color: goldenrod;
+}
+.cmp-clientActive .cmp-edit{
+    background-color: goldenrod;
+}
+.cmp-edit:hover{
+    background-color: goldenrod;
+    color: #fff;
+    
+}
+.cmp-editDis, .cmp-deleteDis{
+    background-color: #ddd;
+    border: 1px solid #eee;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 5px 0;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.cmp-delete:hover{
+    background-color: #ff0033;
+    color: #fff;
+}
+.cmp-xspan,.cmp-maxPrice{
+    color: #fff;
+    font-weight: bold;
+}
+.cmp-xinput,.cmp-maxPrInput{
+    width: 2em;
+}
+
+.cmp-save, .cmp-close {
+    background-color: Silver;
+    border: 1px solid gray;
+    color: gray;
+    padding: 0 3px;
+    cursor: pointer;
+}
+.cmp-save:hover, .cmp-close:hover{
+    color: black;
+}
+.cmp-modeStr{
+    font-weight: bold;
+    color: #2A801B;
+}
+.cmp-maxPriceStr{
+    font-weight: bold;
+    color: #000;    
+}
+.cmp-setModeBtn, .cmp-unSetModeBtn{
+    cursor: pointer;
+    float: left;
+    margin: 5px;
+    padding: 2px 5px;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;   
+}
+.cmp-setModeBtn, .cmp-unSetModeBtn{
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    color: gray;
+
+}
+.cmp-setModeBtn:hover{
+    background-color:darkgreen;
+    color: #fff;   
+}
+.cmp-setModeBtnAct{
+    background-color: #529214;
+    color: #fff;    
+}
+.cmp-unSetModeBtn:hover{
+    background-color: #ff0033;
+    color: #fff;
+}
+.cmp-navBar{
+    background-color: #EEEEEE;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.cmp-navBarData{
+    font-style: italic;
+    color: brown;
+}
+.cmp-navBarCam, .cmp-navBarBan, .cmp-navBarPhr{
+    color: gray;
+}
+.cmp-navBarAct{
+    color: black;
+}
+.cmp-navBarLnk{
+    color: #0066CC;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.cmp-navBarLnk:hover{
+    color: #0099FF;
+}
+.cmp-navBarCtrl{
+    background-color: #FFFFFF;
+    display: block;
+    float: left;
+    margin: 5px;
+    padding: 3px 10px;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+}
+.cmp-clientLowCtr{
+    background-color: #eee;
+    color: #ccc;
+    margin-bottom: 5px;
+    padding: 5px 0;
+}
+.cmp-lowCtr{
+    color:gray;
+    font-weight:bold;
+}
+.cmp-lowCtrFrst{
+    margin: 0 5px;
+}
+.cmp-price{
+    font-weight: bold;
+    text-align: center;
+}
+.cmp-priceHd{
+    text-align: center;
+}
+.cmp-ctrCtr{
+    border-top: 1px solid #ccc;
+}
+.cmp-startStop {
+    border: 1px solid gray;
+    padding: 0 3px;
+    color: gray;
+    background-color: #ddd;
+    cursor: pointer;
+    text-align: center;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; 
+}
+.cmp-startStop:hover{
+    color: #fff;
+    background-color: gray;
+    border-color: darkgray;
+}
+.cmp-dayBud{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cmp-clientBud{
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+}
+.cmp-budClose, .cmp-budOk{
+    background-color: gray;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cmp-dayLimit{
+    color: red;
+}
+.cmp-clientDayLim .cmp-daySpend{
+    color: red;
+}
+.cmp-rest{
+    overflow: hidden;
+}

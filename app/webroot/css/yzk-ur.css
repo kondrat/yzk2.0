@@ -1,0 +1,466 @@
+/**
+ * user reg login styles
+ */
+ 
+.ur-signUpNow {
+    float:left;
+    margin:0.5em 0 0 0;
+}
+.ur-signUpNow a {
+    color:gray;
+    font-weight:bold;
+    font-size:110%;
+    padding:0.3em .5em;
+    display:block;
+    text-decoration:none;
+}
+.ur-signUpNow a:hover {
+    color:white;
+    background-color:#777;
+
+}
+
+.ur-formSubmitReg, .ur-formSubmitLog {
+    float:left;
+    margin:0 0 1.5em 175px;
+    width: 662px;
+}
+
+/*signUp button in login form*/
+.reg {
+    position: absolute;
+    left: 400px;
+    top: 0;
+}
+.reg a {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    display:block;
+    border: 1px solid mistyRose;
+
+    padding: 3px 10px;
+    text-align:center;
+
+    font-size: 1.2em;
+    text-decoration:none;
+    font-weight: bold;
+    background-color: #97CD39;
+    color: gray;
+    text-shadow:-1px 1px 0 #eee;
+    background:transparent url(../img/pic/ur_reg.png) repeat-x scroll 0 0;
+
+}
+.reg a:hover {
+    color: gray;
+    text-shadow:-1px 1px 0 #fff;
+    background-position: 0 -5px;
+}
+
+/*quick Login Calss*/
+.ur-autoLogin label {
+    color:gray;
+    font-weight:normal;
+    vertical-align:sub;
+}
+.ur-autoLogin input {
+    margin: 0 3px 0 0;
+}
+
+/*form classes*/
+.ur-formPageReg {   
+    border: 1px solid gray;
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    
+    -moz-box-shadow: 0px 0px 4px #000;
+    -webkit-box-shadow: 0px 0px 4px #000;
+    box-shadow: 0px 0px 4px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+    
+   
+    margin: 40px 0 0;
+    padding: 10px 0;
+    position: relative;    
+}
+.ur-formPageLog {
+    
+    margin:60px 0;
+    position:relative;   
+}
+
+.ur-formPage {
+    float:left;
+    height:1%;
+    margin:2em 0 0 0;
+    padding:10px 0;
+    position:relative;
+    background:transparent url(../img/pic/form_bg.png) repeat-x scroll 0 bottom;
+}
+
+
+/*
+#UserUsername, #UserPassword, #UserPassword1, #UserPassword2,#UserEmail,#UserEmailReset {
+    width: 200px;
+    margin: 0 0 5px;
+    padding: 5px;
+    float:left;
+    
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;    
+}
+*/
+.ur-formWrapIn input{
+    width: 200px;
+    margin: 0 0 5px;
+    padding: 5px;
+    float:left;
+    
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;    
+}
+
+
+.ur-inputFormWrap{
+    margin: 0;
+    padding: 0 0 1em 0;
+    position:relative;
+    height:1%;
+    float:left;
+    width:662px;
+}
+div.ur-formWrapLabel{
+    float:left;
+    width:165px;
+    margin: 0.1em 10px 0 0;
+    text-align: right;
+    color:#000;
+    display:block;
+}
+div.ur-formWrapLabel label{
+    font-weight:normal;
+    font-size:15px;
+}
+div.ur-formWrapIn{
+    float:left;
+    margin-top:1px;
+    width:217px;
+}
+div.ur-formWrapTip{	
+    float:left;
+    width:265px;
+}
+div.ur-formWrapTip div{
+    -moz-border-radius:5px;
+    min-height:27px;
+    padding: 2px 0 0 4px;
+}
+div.ur-formWrapTip div img{
+    margin-right: 3px;
+}
+
+/*
+div.activeFormTip{
+	border:1px solid #eee;
+	color:gray;
+	background-color:Cornsilk;
+}
+*/
+
+/*error block*/
+
+
+.error-message {
+    color:#8A1F11;
+    font-weight:bold;
+}
+
+div.error {
+    border:none;
+    background:none;
+}
+
+
+div.ur-inputFormWrap input.form-error {
+    background-color: #eee;
+}
+
+/*error block*/
+
+
+
+span.markCheck{
+    background: transparent url("../img/icon/ajax-loader1.gif") no-repeat scroll;
+    height:16px;
+    width:16px;
+    display:block;
+    float:left;
+    margin-right:4px;
+}
+
+
+.rTip{
+    border:1px solid #eee;
+    color:gray;
+    background-color:Cornsilk;	
+}
+.rCheck{
+    border:1px solid transparent;
+    color:gray;
+}
+.rError{
+    background-color:#FBE3E4;
+    color:#8A1F11;	
+    border:1px solid #FBC2C4
+}
+.rOk{
+    border:1px solid transparent;
+}
+.rOk span.mark{
+    background-position: 0 -60px;
+}
+span.mark{
+    background: transparent url("../img/icon/check_marks.png") no-repeat scroll;	
+    height:16px;
+    width:16px;
+    display:block;
+    float:left;
+    margin-right:4px;
+}
+.weakPass{
+    color: #80461B;
+    border-color:#E5BDA3;
+    background-color:#FFE2CF;
+}
+.weakPass span.mark{
+    background-position: 0 0;	
+}
+.goodPass{
+    color:#80621B;
+}
+.goodPass span.mark{
+    background-position: 0 -20px;
+}
+.strongPass{
+    color:#78801B;
+}
+.strongPass span.mark{
+    background-position: 0 -40px;
+}
+.bestPass{
+    color:#2A801B;
+}
+.bestPass span.mark{
+    background-position: 0 -60px;
+}
+.notOkPass{
+    color: gray;
+    border-color:#DBDBDB;
+    background-color:#F2F2F2;
+}
+.notOkPass span.mark{
+    background-position: 0 -80px;
+}
+
+
+
+
+
+
+
+.greenMessage{
+    margin: 0 0 0 12em;
+    padding: 0;
+    height: 15px;
+}
+
+
+
+
+
+
+
+
+
+/*login*/
+
+.signup {
+    z-index: 10;
+    border: 1px solid #ccc;
+    background-color: #efe;	
+    margin: 20px 0 0 0;
+    background-color: #4A4A4A;
+    border: 7px solid #ccc;
+    /*opacity: 0.8;*/
+    /*filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);*/
+    cursor: move; 
+    height: 70px;
+}
+.innerSignup {
+    background-color:#000000;
+    padding:10px 10px 10px 10px;
+    text-align:center;
+}
+.innerSignup a{
+    /*color:#FF8080;*/
+    color:red;
+    font-weight: bold;
+    text-align: center;
+    text-decoration:none;
+}
+
+.innerSignup a:hover{
+    color:red;
+    text-decoration:underline;
+}  
+
+
+#ur-userCapchaReg {
+    width: 120px;	
+    margin:0;
+    padding:5px;
+    
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;     
+}
+
+
+#ur-userTosReg{
+    width: 20px;
+    float: right;
+    margin-right: 10px;
+}
+
+.capReset {
+    position:relative;
+}
+.capReset img {
+    position:absolute;
+    top:2px;
+}
+.capReset span {
+    cursor:pointer;
+    border-bottom:1px dashed;
+    margin-left:18px;
+}
+
+#capImg {
+    cursor: pointer;
+}
+.capPlace {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    width: 142px;
+    height: 60px;
+    float: left;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    padding:2px;
+}
+#ur-userSubmitLog, #ur-userSubmitReg {
+    padding: 0 1.3em;
+}
+
+/*flash message*/
+#flashMessage {
+    border-bottom:2px solid #ddd;
+    background-color:bisque;
+    font-size:12pt;
+    font-weight:bold;
+    line-height:2.5em;
+    margin:0px 0 0;
+    overflow:hidden;
+    position:absolute;
+    text-align:center;
+    width:100%;
+    z-index:100;
+    height:0;
+}
+div.fler {
+    color:red;
+}
+div.flok {
+    color:green;
+}
+.ur-fl {	
+    z-index:100;	
+    position:relative;
+}
+.ur-layotHead{
+    /*background-color: #eee;*/
+    padding: 5px 0;
+}
+.ur-layoutHeadTip{
+    color: black;
+    float: left;
+    font-size: larger;
+    margin-top: 5px;
+}
+.ur-regInfo{
+    margin-top: 10px;
+}
+.ur-headLayoutInputWrp label{
+    margin-right: 3px;
+    color: #999;
+    left: 7px;
+    position: absolute;
+    top: 8px;
+    cursor: text;
+ 
+}
+.ur-headLayoutInputWrp input{
+    margin-right: 5px;
+    color: #aaa;
+    background-color: #eee;
+    width: 185px;
+    margin-bottom: 0;
+}
+div.ur-headLayoutInputWrp{
+    position: relative;
+    float: left;
+}
+.ur-headLayoutLoginBtn{
+    margin-top:5px;
+}
+.ur-topLogInputAct label{
+    color: gray;
+}
+.ur-topLogInputAct input{
+    background-color: #f8f8f8; 
+}
+.ur-topLogInputFocus input{
+    background-color: #fff;
+}
+.ur-topLogInputFocus label{
+    color: #ccc;
+}
+.ur-topLogInputDone input{
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+}
+.ur-headLayoutRemMe input{
+    margin-left: 0;
+}
+.ur-headLayoutRemMe label{
+    color:#0066CC;
+    font-weight: normal;
+    vertical-align: bottom;
+}
+.ur-uploadBtn {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-decoration: underline;
+    float: left;
+}
+.ur-uploadBtn:hover{
+    color: green;
+}
+.ur-uploadBtnAct{
+    color: green;
+}
