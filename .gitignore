@@ -1,0 +1,12 @@
+/app/Config/core.php
+/app/Config/database.php
+/app/Config/vars.php
+/app/tmp
+Certs/*
+/plugins
+/vendors
+!empty
+!.gitignore
+*~
+.DS_Store
+tags
