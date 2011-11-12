@@ -7,13 +7,13 @@ if (!isset($menuType)) {
 <?php switch ($menuType):
     case 'regged': ?>
         <div class="lt-topMenu">
-            <?php echo $this->Html->link(__('Profile', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'profile'), array('onclick' => 'return false')); ?>
+            <?php echo $this->Html->link(__('Profile', true), array('plugin' => null, 'controller' => 'users', 'action' => 'profile'), array('onclick' => 'return false')); ?>
         </div>	 	
         <div class="lt-topMenu">
-            <?php echo $this->Html->link(__('Settings', true), array('plugin' => 'users', 'controller' => 'details', 'action' => 'index'), array()); ?>
+            <?php echo $this->Html->link(__('Settings', true), array('plugin' => null, 'controller' => 'details', 'action' => 'index'), array()); ?>
         </div>	 	
         <div class="lt-topMenu">
-            <?php echo $this->Html->link(__('LogOut now', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'logout')); ?>
+            <?php echo $this->Html->link(__('LogOut now', true), array('plugin' => null, 'controller' => 'users', 'action' => 'logout')); ?>
         </div>
         <?php break; ?>
 
@@ -22,7 +22,7 @@ if (!isset($menuType)) {
             <?php echo $this->Html->link(__('Home', true), '/', array()); ?>
         </div>   
         <div class="lt-topMenu">
-            <?php echo $this->Html->link(__('LogOut now', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'logout')); ?>
+            <?php echo $this->Html->link(__('LogOut now', true), array('plugin' => null, 'controller' => 'users', 'action' => 'logout')); ?>
         </div>   
         <?php break; ?>
     <?php case 'reg': ?>
@@ -34,7 +34,7 @@ if (!isset($menuType)) {
                    
                     <?php
                     echo $this->Form->create(null, array(
-                        'url' => array('plugin' => 'users', 'controller' => 'users', 'action' => 'login'),
+                        'url' => array('plugin' => null, 'controller' => 'users', 'action' => 'login'),
                         'inputDefaults' => array('label' => false, 'div' => false,),
                         'id' => 'ur-headLayoutLogin'
                             )
@@ -88,17 +88,17 @@ if (!isset($menuType)) {
             <?php echo $this->Html->link(__('Home', true), '/', array()); ?>			
         </div>
         <div class="lt-topMenu">										
-        <?php echo $this->Html->link(__('SignUp now', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'reg')); ?>
+        <?php echo $this->Html->link(__('SignUp now', true), array('plugin' => null, 'controller' => 'users', 'action' => 'reg')); ?>
         </div>		
         <?php break; ?>
         <?php case 'index': ?>
 
         <div id="logInNow" class="lt-topMenu">										
         <?php //echo $this->Html->link('<span>'.__('LogIn now',true).'</span><span class="upDownSmallArrow"></span>', array('controller'=>'users','action'=>'login'),array('escape'=>false) ); ?>
-            <?php echo $this->Html->link('<span class="upDownArr">' . __('LogIn now', true) . '</span>', array('plugin' => 'users', 'controller' => 'users', 'action' => 'login'), array('escape' => false)); ?>			
+            <?php echo $this->Html->link('<span class="upDownArr">' . __('LogIn now', true) . '</span>', array('plugin' => null, 'controller' => 'users', 'action' => 'login'), array('escape' => false)); ?>			
         </div>
         <div class="lt-topMenu">										
-        <?php echo $this->Html->link(__('SignUp now', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'reg')); ?>
+        <?php echo $this->Html->link(__('SignUp now', true), array('plugin' => null, 'controller' => 'users', 'action' => 'reg')); ?>
         </div>			
         <?php echo $this->element('pageHead/quickLogin/quick_login', array('cache' => false)); ?>
 

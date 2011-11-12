@@ -17,7 +17,7 @@ jQuery(document).ready( function(){
     $('.capReset span, #capImg').click( function() {
         var Stamp = new Date();
         $('#capImg').attr( {
-            src: path+"/users/users/kcaptcha/"+Stamp.getTime()
+            src: path+"/users/kcaptcha/"+Stamp.getTime()
         } );
     });
 
@@ -72,7 +72,7 @@ jQuery(document).ready( function(){
                 
                 $.ajax({
                     type: "POST",
-                    url: path+"/users/users/userNameCheck/",
+                    url: path+"/users/userNameCheck/",
                     data: {
                         "data[User][email]": InputStr, 
                         "data[_Token][key]": $reg_token.val()

@@ -5,7 +5,7 @@
  *
  * @author kondrat
  */
-class getYnDataComponent extends Object {
+class getYnDataComponent extends Component {
 
     /**
      *

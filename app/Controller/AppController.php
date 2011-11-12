@@ -1,44 +1,63 @@
 <?php
+
 App::uses('Controller', 'Controller');
 
 class AppController extends Controller {
 
     var $components = array(
-        'Security',
-        'Cookie',
-        'Session',
-        'Auth' => array(
-            'authorize' => 'actions',
-            'actionPath' => 'controllers/',
-            'loginAction' => array(
-                'controller' => 'users',
-                'action' => 'login',
-                'plugin' => null,
-                'admin' => false,               
-            ),
-            'fields'=> array(
-                'username' => 'email',
-                'password' => 'password'
-            )
-        //'allowedActions' => array('')
+        'Security'=> array(
+            'csrfUseOnce' => false
         ),
-        //'Acl',
+        'Cookie',
+        'Auth' => array(
+            //'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
+            'authorize' => array('Controller'),
+            //'authError' => __('Did you really think you are allowed to see that?'),
+            'authenticate' => array(
+                'Form' => array(
+                    'fields' => array('username' => 'email','password'=>'password')
+                )
+            )
+        ),
+        'Session',
+//        'Auth' => array(
+//            'authorize' => 'actions',
+//            'actionPath' => 'controllers/',
+//            'loginAction' => array(
+//                'controller' => 'users',
+//                'action' => 'login',
+//                'plugin' => null,
+//                'admin' => false, 
+//                'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
+//                'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
+//            ),
+//            'fields'=> array(
+//                'id'=>'id',
+//                'username' => 'email',
+//                'password' => 'password'
+//            )
+//        //'allowedActions' => array('')
+//        ),
+        'Acl',
         //'getYnData',
         'RequestHandler',
         'Email',
         'DebugKit.Toolbar'
     );
-    var $helpers = array('Session', 'Js', 'Html', 'Form', 'Cache');
-    var $publicControllers = array('pages', 'test');
+    public $helpers = array('Session', 'Js', 'Html', 'Form', 'Cache');
+    public $publicControllers = array('pages', 'test');
 
 //--------------------------------------------------------------------
     function beforeFilter() {
+        parent::beforeFilter();
         //loading file vars.php from conf directory. contains configuration
         Configure::load('vars');
- 
+       
         if (isset($this->Auth)) {
 
-            if ($this->viewPath == 'pages' && $this->params['action'] != 'admin_index') {
+            if ($this->viewPath == 'Pages' && $this->params['action'] != 'admin_index' ) {
+                
                 $this->Auth->allow('*');
             } else {
                 $this->Auth->authorize = 'controller';
@@ -50,21 +69,21 @@ class AppController extends Controller {
             //$this->Auth->loginAction = array('admin' => false, 'controller' => 'users', 'action' => 'login');
         }
     }
-
-    function isAuthorized() {
+    
+    public function isAuthorized($user) {
 
         if ('1' == '1') {
             return true;
         } else {
             return false;
         }
-        return true;
+        return false;
     }
 
 //--------------------------------------------------------------------
 
     function beforeRender() {
-        if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+        if ( isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
             $this->layout = 'admin';
         }
     }

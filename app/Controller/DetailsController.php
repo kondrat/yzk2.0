@@ -1,6 +1,6 @@
 <?php
 
-class DetailsController extends UsersAppController {
+class DetailsController extends AppController {
 
     /**
      * Name
@@ -13,7 +13,7 @@ class DetailsController extends UsersAppController {
      * 
      * @var array
      */
-    public $components = array('Users.Upload');
+    public $components = array('Upload');
     /**
      * Helpers
      *
@@ -28,12 +28,12 @@ class DetailsController extends UsersAppController {
      */
     public function beforeFilter() {
         //default title
-        $this->set('title_for_layout', __d('users', 'Users data', true));
+        $this->set('title_for_layout', __('Users data'));
 
         parent::beforeFilter();
-        //$this->Auth->allow();
-        $this->Auth->autoRedirect = false;
-        $this->Auth->loginError = "auth err";
+        $this->Auth->allow();
+//        $this->Auth->autoRedirect = false;
+//        $this->Auth->loginError = "auth err";
     }
 
     /**
@@ -43,8 +43,12 @@ class DetailsController extends UsersAppController {
      */
     public function index() {
 
-        $this->set('title_for_layout', __d('users', 'User data', true));
+        $this->set('title_for_layout', __('User data'));
         $this->set('menuType', 'settings');
+
+//        debug($this->Auth->user('id'));
+//        debug($this->Auth->user('email'));
+//        debug($this->Auth->user('group_id'));
 
         $details = $this->Detail->find('all', array(
                     'contain' => array(),
@@ -52,6 +56,7 @@ class DetailsController extends UsersAppController {
                         'Detail.user_id' => $this->Auth->user('id'),
                         'Detail.field LIKE' => 'user.%'),
                     'order' => 'Detail.position DESC'));
+
         $this->set('details', $details);
 
         $notAfter = null;
@@ -67,8 +72,8 @@ class DetailsController extends UsersAppController {
         $this->set('notAfter',$notAfter);
         
 
-        if (!is_dir(APP . 'certs/' . $this->Auth->user('id'))) {
-            mkdir(APP . 'certs/' . $this->Auth->user('id'));
+        if (!is_dir(APP . 'Certs/' . $this->Auth->user('id'))) {
+            mkdir(APP . 'Certs/' . $this->Auth->user('id'));
         }
     }
 
@@ -80,7 +85,8 @@ class DetailsController extends UsersAppController {
      */
     public function certupload() {
               
-        //debug($this->data);
+            $distanationDir = APP . 'Certs' . DS . $this->Auth->user('id');
+            debug($distanationDir);        
         
     
         if (!empty($this->data)  && $this->Auth->user('id') != null  && $this->Auth->user('group_id') <= 4) {
@@ -88,7 +94,8 @@ class DetailsController extends UsersAppController {
             $file = array();
             
             // set the upload destination folder
-            $distanationDir = APP . 'certs' . DS . $this->Auth->user('id');
+            $distanationDir = APP . 'Certs' . DS . $this->Auth->user('id');
+            
             //$distanationDirTmp = APP . 'certs' . DS . $this->Auth->user('id')."-tmp";
             if (!is_dir($distanationDir)) {
                 mkdir($distanationDir);
@@ -104,7 +111,7 @@ class DetailsController extends UsersAppController {
             $file = $this->data['Detail']['cert'];
             //debug($file);
             if ($file['error'] == 4) {
-                $this->Session->setFlash(__d('users', 'File wasn\'t uploaded', true));
+                $this->Session->setFlash(__( 'File wasn\'t uploaded', true));
             } else {
                 // upload the zip archive using the upload component
                 $result = $this->Upload->upload($file, $distanationDir);
@@ -127,10 +134,10 @@ class DetailsController extends UsersAppController {
                                     )
                     );
 
-                    $this->data['User']['id'] = $currentUser['User']['id'];
-                    $this->data['User']['md5cert'] = $result['md5cert'];
-                    $this->data['User']['certnotbefore'] = $result['notBefore'];
-                    $this->data['User']['certnotafter'] = $result['notAfter'];
+                    $this->request->data['User']['id'] = $currentUser['User']['id'];
+                    $this->request->data['User']['md5cert'] = $result['md5cert'];
+                    $this->request->data['User']['certnotbefore'] = $result['notBefore'];
+                    $this->request->data['User']['certnotafter'] = $result['notAfter'];
                     
 
                     $this->Detail->User->set($this->data);
@@ -141,12 +148,12 @@ class DetailsController extends UsersAppController {
 
                     if(!isset($errors["md5cert"]) && isset($currentUser['User']['id'])){
                          if ($this->Detail->User->save($this->data, false) && $this->Upload->moveCertFiles($distanationDir) ) {
-                            $this->Session->setFlash(__d('users','Certificate was succesfully uploaded',true),'default',array('class'=>'flok'));
+                            $this->Session->setFlash(__('Certificate was succesfully uploaded',true),'default',array('class'=>'flok'));
                         } else {
-                            $this->Session->setFlash(__d('users','Mistake with uploading zip archive. Try again'),'default',array('class'=>'fler'));
+                            $this->Session->setFlash(__('Mistake with uploading zip archive. Try again'),'default',array('class'=>'fler'));
                         }                       
                     } else {
-                        $this->Session->setFlash(__d('users','This certificate isn\'t valid in system',true),'default',array('class'=>'fler'));
+                        $this->Session->setFlash(__('This certificate isn\'t valid in system',true),'default',array('class'=>'fler'));
                          
                     }
                     
@@ -158,10 +165,10 @@ class DetailsController extends UsersAppController {
                 }
             }
         } else {
-            $this->Session->setFlash(__d('users','Mistake with uploading zip archive.',TRUE),'default',array('class'=>'fler'));
+            $this->Session->setFlash(__('Mistake with uploading zip archive.',TRUE),'default',array('class'=>'fler'));
         } 
         
-        $this->redirect(array('plugin'=>'users','controller'=>'details','action' => 'index'), null, true);
+        $this->redirect(array('plugin'=>null,'controller'=>'details','action' => 'index'), null, true);
         
     }
 
@@ -173,7 +180,7 @@ class DetailsController extends UsersAppController {
      */
     public function view($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('users', 'Invalid Detail.', true));
+            $this->Session->setFlash(__( 'Invalid Detail.', true));
             $this->redirect(array('action' => 'index'));
         }
         $this->set('detail', $this->Detail->read(null, $id));
@@ -194,7 +201,7 @@ class DetailsController extends UsersAppController {
                             array('Detail.value' => "'$value'"), array('Detail.user_id' => $userId, 'Detail.field' => $field));
                 }
             }
-            $this->Session->setFlash(__d('users', 'Saved', true));
+            $this->Session->setFlash(__( 'Saved', true));
         }
         $this->redirect(array('action' => 'index'));
     }
@@ -215,7 +222,7 @@ class DetailsController extends UsersAppController {
         if (!empty($this->data)) {
             $this->Detail->saveSection($this->Auth->user('id'), $this->data, $section);
             $this->data['Detail'] = $this->Detail->getSection($this->Auth->user('id'), $section);
-            $this->Session->setFlash(sprintf(__d('users', '%s details saved', true), ucfirst($section)));
+            $this->Session->setFlash(sprintf(__( '%s details saved', true), ucfirst($section)));
         }
 
         if (empty($this->data)) {
@@ -233,11 +240,11 @@ class DetailsController extends UsersAppController {
      */
     public function delete($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('users', 'Invalid id for Detail', true));
+            $this->Session->setFlash(__( 'Invalid id for Detail', true));
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Detail->delete($id)) {
-            $this->Session->setFlash(__d('users', 'Detail deleted', true));
+            $this->Session->setFlash(__( 'Detail deleted', true));
             $this->redirect(array('action' => 'index'));
         }
     }
@@ -260,7 +267,7 @@ class DetailsController extends UsersAppController {
      */
     public function admin_view($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('users', 'Invalid Detail.', true));
+            $this->Session->setFlash(__( 'Invalid Detail.', true));
             $this->redirect(array('action' => 'index'));
         }
         $this->set('detail', $this->Detail->read(null, $id));
@@ -275,10 +282,10 @@ class DetailsController extends UsersAppController {
         if (!empty($this->data)) {
             $this->Detail->create();
             if ($this->Detail->save($this->data)) {
-                $this->Session->setFlash(__d('users', 'The Detail has been saved', true));
+                $this->Session->setFlash(__( 'The Detail has been saved', true));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('users', 'The Detail could not be saved. Please, try again.', true));
+                $this->Session->setFlash(__( 'The Detail could not be saved. Please, try again.', true));
             }
         }
         $groups = $this->Detail->Group->find('list');
@@ -294,15 +301,15 @@ class DetailsController extends UsersAppController {
      */
     public function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->Session->setFlash(__d('users', 'Invalid Detail', true));
+            $this->Session->setFlash(__( 'Invalid Detail', true));
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->data)) {
             if ($this->Detail->save($this->data)) {
-                $this->Session->setFlash(__d('users', 'The Detail has been saved', true));
+                $this->Session->setFlash(__( 'The Detail has been saved', true));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__d('users', 'The Detail could not be saved. Please, try again.', true));
+                $this->Session->setFlash(__( 'The Detail could not be saved. Please, try again.', true));
             }
         }
         if (empty($this->data)) {
@@ -321,11 +328,11 @@ class DetailsController extends UsersAppController {
      */
     public function admin_delete($id = null) {
         if (!$id) {
-            $this->Session->setFlash(__d('users', 'Invalid id for Detail', true));
+            $this->Session->setFlash(__( 'Invalid id for Detail', true));
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Detail->delete($id)) {
-            $this->Session->setFlash(__d('users', 'Detail deleted', true));
+            $this->Session->setFlash(__( 'Detail deleted', true));
             $this->redirect(array('action' => 'index'));
         }
     }

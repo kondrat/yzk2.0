@@ -1,4 +1,4 @@
-<?php echo $this->element('webroot_for_det'); ?>
+<?php echo $this->element('users/WebrootForDet'); ?>
 <?php //debug($this->Session->read('Auth.User'));?>
 <div class="span-18">
     <div class="span-18">
@@ -6,19 +6,19 @@
     </div>
 </div>
 <div class="span-18">
-    <?php __d('users','Chandge password');?>
+    <?php echo __('Chandge password');?>
 </div>
 <div calss="span-18">
-    <div class="span-18"><?php __d('users','Current sertifitate:');?></div>
+    <div class="span-18"><?php echo __('Current sertifitate:');?></div>
     <div class="span-18">
         <?php 
             __d('users','Valid till: ');
             
         ?>
-        <?php if($notAfter != null): ?>
+        <?php if(isset($notAfter) && $notAfter != null): ?>
             <?php    echo $notAfter;?>
         <?php else: ?>
-            <span style="color:red;"><?php  __d('users','You haven\'t uploaded certificate yet');?></span>   
+            <span style="color:red;"><?php echo __('You haven\'t uploaded certificate yet');?></span>   
         <?php endif ?>
     </div>
 </div>
@@ -26,13 +26,13 @@
     
     <div class="span-18">
         <div id="ur-uploadBtn" class="ur-uploadBtn">
-            <?php __d('users','upload sertificate');?>
+            <?php echo __('upload sertificate');?>
         </div>
             
     </div>
     <div id="ur-uploadCert" class="span-18 hide">
         <?php echo $this->Form->create(null,array(
-            'url'=>array('plugin'=>'users','controller'=>'details','action'=>'certupload'),
+            'url'=>array('plugin'=>null,'controller'=>'details','action'=>'certupload'),
             'type'=>'file'
         ));?>
         <?php echo $this->Form->input('cert',array('type' => 'file','label'=>false));?>

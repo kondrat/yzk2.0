@@ -55,8 +55,8 @@ class UsersController extends AppController {
 
         $this->set('model', $this->modelClass);
 
-        if ($this->action == 'login' && !empty($this->data)) {
-            $data = $this->data;
+        if ($this->action == 'login' && !empty($this->request->data)) {
+            $data = $this->request->data;
 
             //for quick login. not to use it
 //            if ($this->referer() === '/' || $this->referer() === 'cards/index') {
@@ -78,7 +78,7 @@ class UsersController extends AppController {
 
 
         // swiching off Security component for ajax call				
-        if ($this->RequestHandler->isAjax() && $this->action == 'userNameCheck') {
+        if ($this->request->is('ajax') && $this->action == 'userNameCheck') {
             $this->Security->validatePost = false;
         }
     }
@@ -98,27 +98,28 @@ class UsersController extends AppController {
         $this->autoLayout = false;
         $this->autoRender = false;
 
-        if ($this->RequestHandler->isAjax()) {
+        
+        
+        if ($this->request->is('ajax')) {
 
-            if (strpos(env('HTTP_REFERER'), trim(env('HTTP_HOST'), '/')) === false) {
-                $this->Security->blackHole($this, 'Invalid referrer detected for this request!');
-            }
+//            if (strpos(env('HTTP_REFERER'), trim(env('HTTP_HOST'), '/')) === false) {
+//                $this->Security->blackHole($this, 'Invalid referrer detected for this request!');
+//            }
+//
+//
+//            if (!isset($this->data['_Token']['key']) || ( $this->data['_Token']['key'] !== $this->params['_Token']['key'] )) {
+//               // $this->Security->blackHole($this, 'Invalid referrer detected for this request!');
+//            }
+//
+//
+//
+//            //don't foreget about santization and trimm
+//            if ( !isset($this->data['User']['email']) || $this->data['User']['email'] == null) {
+//                $this->Security->blackHole($this, 'Invalid referrer detected for this request!');
+//            }
 
-
-            if (!isset($this->data['_Token']['key']) || ( $this->data['_Token']['key'] !== $this->params['_Token']['key'] )) {
-                $this->Security->blackHole($this, 'Invalid referrer detected for this request!');
-            }
-
-
-
-            //don't foreget about santization and trimm
-            if ( !isset($this->data['User']['email']) || $this->data['User']['email'] == null) {
-                $this->Security->blackHole($this, 'Invalid referrer detected for this request!');
-            }
-
-
-
-            $this->User->set($this->data);
+            
+            $this->User->set($this->request->data);
 
 
             $errors = $this->User->invalidFields();
@@ -294,61 +295,73 @@ class UsersController extends AppController {
 
         $this->set('title_for_layout', __('Login'));
         $this->set('menuType', 'login');
-
-        if ($this->Auth->user()) {
-            //debug($this->Auth->user('id'));
-            $userId = $this->User->id = $this->Auth->user('id');
-            $this->User->saveField('last_login', date('Y-m-d H:i:s'));
-
-            
-            if (!empty($this->data)) {
-                $data = $this->data[$this->modelClass];
-                $this->_setCookie();
-            }
-            $userGroupId = $this->Auth->user('group_id');
-
-            if ($userGroupId == 3) {
-                $this->redirect(array('plugin' => null, 'controller' => 'clients', 'action' => 'index'));
-            } elseif ($userGroupId == 4) {
-                
-                $regUserYnLogin = $this->User->Client->find('first',array(
-                    'conditions'=>array( 'Client.user_id'=>$userId),
-                    'contain'=>false
-                ));
-                
-                $this->Session->write('Auth.User.ynLogin', $regUserYnLogin['Client']['ynname']);
-                $this->Session->setFlash(sprintf(__d('users', '%s you u have successfully logged in group 3', true), $this->Auth->user('username')));
-                $this->redirect(array('plugin' => null, 'controller' => 'campaigns', 'action' => 'index','client'=>$regUserYnLogin['Client']['ynname']));
-            }
-
-            if ($this->here == $this->Auth->loginRedirect) {
-                //debug($this->Auth->loginRedirect);
-                $this->Auth->loginRedirect = '/';
-                //temp solution
-            }
-
-            $this->Session->setFlash(sprintf(__d('users', '%s you u have successfully logged in', true), $this->Auth->user('username')));
-
-
-            if (empty($data['return_to'])) {
-                $data['return_to'] = null;
-            }
-            //$this->redirect($this->Auth->redirect($data['return_to']));
+ 
+        if($this->Auth->user()){
+           return $this->redirect('/');
         }
-
-        if (isset($this->params['named']['return_to'])) {
-            $this->set('return_to', urldecode($this->params['named']['return_to']));
-        } else {
-            $this->set('return_to', false);
-        }
-
-
-        if (!empty($this->data)) {
-            if (!$this->Auth->login($this->data)) {
-                $this->data['User']['password'] = null;
-                $this->Session->setFlash(__d('users', 'Check your login and password', true), 'default', array('class' => 'fler'));
+        
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+                return $this->redirect($this->Auth->redirect());
+            } else {
+                $this->Session->setFlash(__('Username or password is incorrect!'), 'default', array(), 'auth');
             }
-        }
+        }        
+        
+//        if ($this->Auth->user()) {
+//            
+//            $userId = $this->User->id = $this->Auth->user('id');
+//            $this->User->saveField('last_login', date('Y-m-d H:i:s'));
+//
+//            
+//            if (!empty($this->data)) {
+//                $data = $this->data[$this->modelClass];
+//                $this->_setCookie();
+//            }
+//            $userGroupId = $this->Auth->user('group_id');
+//
+//            if ($userGroupId == 3) {
+//                $this->redirect(array('plugin' => null, 'controller' => 'clients', 'action' => 'index'));
+//            } elseif ($userGroupId == 4) {
+//                
+//                $regUserYnLogin = $this->User->Client->find('first',array(
+//                    'conditions'=>array( 'Client.user_id'=>$userId),
+//                    'contain'=>false
+//                ));
+//                
+//                $this->Session->write('Auth.User.ynLogin', $regUserYnLogin['Client']['ynname']);
+//                $this->Session->setFlash(sprintf(__d('users', '%s you u have successfully logged in group 3', true), $this->Auth->user('username')));
+//                $this->redirect(array('plugin' => null, 'controller' => 'campaigns', 'action' => 'index','client'=>$regUserYnLogin['Client']['ynname']));
+//            }
+//
+//            if ($this->here == $this->Auth->loginRedirect) {
+//                //debug($this->Auth->loginRedirect);
+//                $this->Auth->loginRedirect = '/';
+//                //temp solution
+//            }
+//
+//            $this->Session->setFlash(sprintf(__d('users', '%s you u have successfully logged in', true), $this->Auth->user('username')));
+//
+//
+//            if (empty($data['return_to'])) {
+//                $data['return_to'] = null;
+//            }
+//            //$this->redirect($this->Auth->redirect($data['return_to']));
+//        }
+//
+//        if (isset($this->params['named']['return_to'])) {
+//            $this->set('return_to', urldecode($this->params['named']['return_to']));
+//        } else {
+//            $this->set('return_to', false);
+//        }
+//
+//
+//        if (!empty($this->data)) {
+//            if (!$this->Auth->login($this->data)) {
+//                $this->data['User']['password'] = null;
+//                $this->Session->setFlash(__d('users', 'Check your login and password', true), 'default', array('class' => 'fler'));
+//            }
+//        }
     }
 
     /**
@@ -357,7 +370,7 @@ class UsersController extends AppController {
      * @return void
      */
     public function logout() {
-        $tempUserName = sprintf(__d('users', 'Good bay, %s', true), $this->Auth->user('username'));
+        $tempUserName = __( 'Good bay, %s', $this->Auth->user('email'));
         $this->Auth->logout();
         $this->Session->setFlash($tempUserName, 'default', array('class' => 'flok'));
         $this->redirect('/');
@@ -520,7 +533,7 @@ class UsersController extends AppController {
             $cookieData[$this->Auth->fields['password']] = $this->data[$this->modelClass][$this->Auth->fields['password']];
             $this->Cookie->write($cookieKey, $cookieData, true, '1 Month');
         }
-        unset($this->data[$this->modelClass]['remember_me']);
+        //unset($this->data[$this->modelClass]['remember_me']);
     }
 //--------------------------------------------------------------------	
 

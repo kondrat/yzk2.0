@@ -1,21 +1,11 @@
 <?php
-/**
- * Copyright 2010, Cake Development Corporation (http://cakedc.com)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright 2010, Cake Development Corporation (http://cakedc.com)
- * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
+
 
 /**
  * Users Detail Model
  *
- * @package users
- * @subpackage users.models
  */
-class Detail extends UsersAppModel {
+class Detail extends AppModel {
 
 /**
  * Name
@@ -55,7 +45,7 @@ class Detail extends UsersAppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		$userClass = Configure::read('App.UserClass');
 		if (empty($userClass)) {
-			$userClass = 'Users.User';
+			$userClass = 'User';
 		}
 		$this->belongsTo['User'] = array(
 			'className' => $userClass,

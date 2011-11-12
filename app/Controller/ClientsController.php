@@ -1,12 +1,13 @@
 <?php
 
 App::import('Sanitize');
-
+App::uses('Controller', 'Controller');
+App::uses('AuthComponent', 'Controller/Component');
 class ClientsController extends AppController {
 
-    var $name = 'Clients';
-    var $publicActions = array('getYnClData', 'regYnCl','todel');
-    var $helpers = array('Text');
+    public $name = 'Clients';
+    public $publicActions = array('getYnClData', 'regYnCl','todel');
+    public $helpers = array('Text');
 
     private $pathToCerts = null;
    /**
@@ -14,61 +15,82 @@ class ClientsController extends AppController {
      * 
      * @var array
      */
-    public $components = array('Users.Upload');
+    public $components = array(
+        'Upload',
+        'Auth' => array(
+            'authorize' => array('Controller')
+            )
+        
+        
+        
+        );
 
 //--------------------------------------------------------------------
 
     function beforeFilter() {
-
-        //default title
-        $this->set('title_for_layout', __('Companies', true));
-        //allowed actions
-        //$this->Auth->allow('index', 'view','getYnClData');
-
         parent::beforeFilter();
-        $this->Auth->autoRedirect = false;
+        //default title
+        $this->set('title_for_layout', __('Companies'));
+        //allowed actions
+        $this->Auth->allow(
+                //'index',
+                'view',
+                'getYnClData'
+                );
+
+        
+        //$this->Auth->autoRedirect = false;
 
         // swiching off Security component for ajax call
-
-        if ($this->RequestHandler->isAjax() && in_array($this->action, $this->publicActions)) {
+        //$this->Security->validatePost = false;
+        if ($this->request->is('ajax') && in_array($this->action, $this->publicActions)) {
             $this->Security->validatePost = false;
+            $this->Security->csrfCheck = false;
         }
 
         $this->disableCache();
  
         if($this->Auth->user('id') != null && $this->Auth->user('group_id') == 3){
-            
-             $user = $this->Client->User->find('first', array(
-                        'contain' => FALSE,
-                        'conditions' => array('User.id' => $this->Auth->user('id'))
-                            )
-            );
-            $certNotBefore = $user['User']['certnotbefore'];
-            $certNotAfter = $user['User']['certnotafter'];
-            $certMd5 = $user['User']['md5cert'];   
+            debug($this->Auth->user());
+ 
+            $certNotBefore = $this->Auth->user('certnotbefore');
+            $certNotAfter = $this->Auth->user('certnotafter');
+            $certMd5 = $this->Auth->user('md5cert');
  
             
             
             if (!$this->Upload->checkCertValidity($certNotBefore, $certNotAfter, $certMd5)) {
-                $this->Session->setFlash(__('You must upload yandex certificate to use system', TRUE), 'default', array('class' => 'fler'));
+                $this->Session->setFlash(__('You must upload yandex certificate to use system'), 'default', array('class' => 'fler'));
                 $this->redirect(array('plugin' => null, 'controller' => 'details', 'action' => 'index'), null, true);
             } else {
-                $this->pathToCerts = APP."certs".DS. $this->Auth->user('id');
+                $this->pathToCerts = APP."Certs".DS. $this->Auth->user('id');
             } 
             
          
         }
-        
-
-
-
-
-       
-        
-        
-        
+              
+        debug($this->action);
+        debug($this->pathToCerts);
+        //debug(parent::isAuthorized($user));
     }
 
+ public function isAuthorized($user) {
+             if ($this->action === 'index') {
+            // All registered users can add posts
+            return true;
+        }
+    if (!parent::isAuthorized($user)) {
+        if ($this->action === 'index') {
+            // All registered users can add posts
+            return true;
+        }
+        if (in_array($this->action, array('edit', 'delete'))) {
+            $postId = $this->request->params['pass'][0];
+            return $this->Post->isOwnedBy($postId, $user['id']);
+        }
+    }
+    return false;
+}
     /**
      * @return type
      * 
@@ -90,8 +112,8 @@ class ClientsController extends AppController {
      * @access public
      */
     public function getYnClData() {
-
-        if ($this->RequestHandler->isAjax()) {
+ 
+        if ($this->request->is('ajax')) {
 
             Configure::write('debug', 0);
             $this->autoLayout = false;

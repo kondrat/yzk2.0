@@ -8,8 +8,8 @@
  */
 echo $this->Html->script(
         array(
-            '/users/js/dev/func',
-            '/users/js/dev/det'
+            'dev/func',
+            'dev/det'
         ), array('inline' => false)
 );
 
@@ -18,6 +18,6 @@ echo $this->Html->script(
  *  css inclusion
  */
 echo $this->Html->css(
-        array('/users/css/yzk-ur'), null, array('inline' => false)
+        array('yzk-ur'), null, array('inline' => false)
 );
 ?> 

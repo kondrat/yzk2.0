@@ -1,6 +1,6 @@
 <?php
 
-class UploadComponent extends Object {
+class UploadComponent extends Component {
 
     /**
      * 	Private Vars
@@ -17,7 +17,7 @@ class UploadComponent extends Object {
     function startup(&$controller) {
         // This method takes a reference to the controller which is loading it.
         // Perform controller initialization here.
-        $this->controller = &$controller;
+        //$this->controller = &$controller;
     }
 
     /**
@@ -52,7 +52,7 @@ class UploadComponent extends Object {
             //clean given tmp directiory
             
             if( !$this->cleanFilesInDir($this->_destinationTmp) ){
-                $this->error(__d('users','Mistake with uploading zip arhive',true));
+                $this->error(__('Mistake with uploading zip arhive'));
                 return 1;
             }
             
@@ -69,14 +69,14 @@ class UploadComponent extends Object {
 
             // -- error if not correct extension
             if (!in_array($this->ext($fileName), $this->_allowed)) {
-                $this->error(__d('users', 'This file extention is not allowed',true));
+                $this->error(__('This file extention is not allowed'));
             } else {
 
                 // -- it's been uploaded with php
                 if (is_uploaded_file($fileTmp)) {
                     // -- how are we handling this file
                     // -- where to put the file?
-                    //$output = $fileName;
+                    
                     // -- just upload it
                     if (move_uploaded_file($fileTmp, $fileName)) {
                         chmod($fileName, 0644);
@@ -105,8 +105,7 @@ class UploadComponent extends Object {
                                     if (!in_array($v, $filesMustBe)) {
 
                                         // error: wrong archive
-                                        $this->error(__d('users', 'Wrong file inside zip archive',true));
-                                        
+                                        $this->error(__('Wrong file inside zip archive'));                                       
                                         break;
                                     } else {
                                         
@@ -116,16 +115,14 @@ class UploadComponent extends Object {
                                             $fl = file($this->_destinationTmp. DS . 'cert.crt');
                                             //debug($fl);
                                             
-                                            if (preg_match("/Not Before:/i", $fl[7],$matches)) {
-                                                
+                                            if (preg_match("/Not Before:/i", $fl[7],$matches)) {                                                
                                                 $posStr = strpos($fl[7], ":") + 1;
                                                 $time = substr($fl[7], $posStr);
                                                 $m = strtotime($time);
                                                 //debug($m);
                                                 $this->result['notBefore'] = date('Y-m-d H:i:s', $m);
                                             }
-                                            if (preg_match("/Not After :/i", $fl[8],$matches)) {
-                                                
+                                            if (preg_match("/Not After :/i", $fl[8],$matches)) {                                               
                                                 $posStr = strpos($fl[8], ":") + 1;
                                                 $time = substr($fl[8], $posStr);
                                                 $m = strtotime($time);
@@ -147,19 +144,19 @@ class UploadComponent extends Object {
                             }
                         } else {
                             //not possible to open zip arhive
-                            $this->error(__d('users', 'Not possible to open archive',true));
+                            $this->error(__('Not possible to open archive'));
                         }
                     } else {
-                        $this->error(__d('users', 'Not possible to open archive',true));
+                        $this->error(__('Not possible to open archive'));
                         //$this->error("Could not move '$fileName' to '$destination'");
                     }
                 } else {
-                    $this->error(__d('users', 'Not possible to open archive',true));
+                    $this->error(__('Not possible to open archive'));
                     //$this->error("Possible file upload attack on '$fileName'");
                 }
             }
         } else {
-            $this->error(__d('users', 'Not possible to open archive',true));
+            $this->error(__('Not possible to open archive'));
             //$this->error($this->upload_error($file['error']));
         }
 

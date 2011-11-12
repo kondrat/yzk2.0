@@ -17,7 +17,7 @@
                     'yzk-com',
                     'yzk-clt',
                     'yzk-cmp',
-                    'yzk-ur'
+                    //'yzk-ur'
                 )
         );
         echo '<!--[if IE]>';

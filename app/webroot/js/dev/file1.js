@@ -11,7 +11,8 @@ jQuery(document).ready(function(){
                 
         $.ajax({
             dataType:"json",
-            url: path+"\/clients\/getYnClData",
+            //url: path+"\/clients\/getYnClData",
+            url: "http:\/\/yzk.go\/clients\/getYnClData",
             type: "POST",
             data: {
                

@@ -16,20 +16,20 @@
     );
 
     $errors = array(
-        'password1' => array('betweenRus' => __d('users', 'Password must be between 4 and 15 chars', true)),
-        'password2' => array('passidentity' => __d('users', 'Please verify your password again', true)),
+        'password1' => array('betweenRus' => __( 'Password must be between 4 and 15 chars', true)),
+        'password2' => array('passidentity' => __( 'Please verify your password again', true)),
         'email' => array(
-            'notEmpty' => __d('users', 'This field cannot be left blank', true),
-            'email' => __d('users', 'Should look like an email address', true),
-            'checkUnique' => __d('users', 'This Email has already been taken', true),
+            'notEmpty' => __( 'This field cannot be left blank', true),
+            'email' => __( 'Should look like an email address', true),
+            'checkUnique' => __( 'This Email has already been taken', true),
         ),
         'captcha' => array(
-            'notEmpty' => __d('users', 'This field cannot be left blank', true),
-            'alphanumeric' => __d('users', 'Only alphabets and numbers allowed', true),
-            'equalCaptcha' => __d('users', 'Please, correct the code.', true),
+            'notEmpty' => __( 'This field cannot be left blank', true),
+            'alphanumeric' => __( 'Only alphabets and numbers allowed', true),
+            'equalCaptcha' => __( 'Please, correct the code.', true),
         ),
         'tos' => array(
-            'custom' => __d('users', 'You must verify you have read the Terms of Service', true)
+            'custom' => __( 'You must verify you have read the Terms of Service', true)
         )
     );
 
@@ -43,7 +43,7 @@
     
     <div class="ur-inputFormWrap">	
         <div class="ur-formWrapLabel">
-            <?php echo $this->Form->label(__d('users', 'Email', true)); ?>
+            <?php echo $this->Form->label(__('Email')); ?>
         </div>
         <div class="ur-formWrapIn">
             <?php echo $this->Form->input('email', array('id' => 'ur-userEmailReg', "class" => "email required", 'error' => false)); ?>	
@@ -63,12 +63,12 @@
             ?>
 
             <div id="rEmailTip" class="rTip hide">																	
-                <?php __d('users', 'Enter valid Email'); ?>								  																	
+                <?php __( 'Enter valid Email'); ?>								  																	
             </div>							
 
             <div id="rEmailCheck" class="rCheck hide">
                 <span class="markCheck"></span>
-                <span><?php __d('users', 'Checking Email'); ?></span>
+                <span><?php echo __('Checking Email'); ?></span>
             </div>
 
             <div id="rEmailError" class="rError <?php echo $errEmailClass; ?>">
@@ -77,7 +77,7 @@
 
             <div id="rEmailOk" class="rOk <?php echo $okEmailClass; ?>">
                 <span class="mark"></span>
-                <span><?php __d('users', 'Ok'); ?></span>
+                <span><?php echo __( 'Ok'); ?></span>
             </div>	
 
         </div>					
@@ -87,7 +87,7 @@
     <div class="ur-inputFormWrap">
 
         <div class="ur-formWrapLabel">
-            <?php echo $this->Form->label(__d('users', 'Password', true)); ?>
+            <?php echo $this->Form->label( __( 'Password') ); ?>
         </div>
 
         <div class="ur-formWrapIn">
@@ -104,12 +104,12 @@
             ?>
 
             <div id="rPass1Tip" class="rTip hide">																	
-                <?php __d('users', '6 characters or more'); ?>								  																	
+                <?php __( '6 characters or more'); ?>								  																	
             </div>
 
             <div id="rPass1Check" class="rCheck hide">
                 <span class="mark"></span>
-                <span><?php __d('users', 'Checking password'); ?></span>
+                <span><?php __( 'Checking password'); ?></span>
             </div>
 
             <div id="rPass1Error" class="rError <?php echo $errPass1Class; ?>">
@@ -121,7 +121,7 @@
 
     <div class="ur-inputFormWrap">	
         <div class="ur-formWrapLabel">
-            <?php echo $this->Form->label(__d('users', 'Confirm Password', true)); ?>
+            <?php echo $this->Form->label(__( 'Confirm Password', true)); ?>
         </div>
         <div class="ur-formWrapIn">
             <?php echo $this->Form->input('password2', array('id' => 'ur-userPassReg2', 'type' => 'password', 'error' => false)); ?>
@@ -141,12 +141,12 @@
             ?>
 
             <div id="rPass2Tip" class="rTip hide">																	
-                <?php __d('users', 'Passwords must be equal'); ?>								  																	
+                <?php __( 'Passwords must be equal'); ?>								  																	
             </div>							
 
             <div id="rPass2Check" class="rCheck hide">
 
-                <?php __d('users', 'Checking password'); ?>
+                <?php __( 'Checking password'); ?>
             </div>
 
             <div id="rPass2Error" class="rError <?php echo $errPass2Class; ?>">
@@ -155,7 +155,7 @@
 
             <div id="rPass2Ok" class="rOk <?php echo $okPass2Class; ?>">
                 <span class="mark"></span>
-                <span><?php __d('users', 'Ok'); ?></span>
+                <span><?php __( 'Ok'); ?></span>
             </div>								
 
         </div>
@@ -175,22 +175,22 @@
         ?>
 
         <div class="span-4" style="padding-left: 175px;">	
-            <div class="capPlace"><?php echo $this->Html->image(array('plugin' => 'users', 'controller' => 'users', 'action' => 'kcaptcha', time()), array('id' => 'capImg')); ?></div>				
+            <div class="capPlace"><?php echo $this->Html->image(array('plugin' => null, 'controller' => 'users', 'action' => 'kcaptcha', time()), array('id' => 'capImg')); ?></div>				
             <div class="span-4 capReset">
-                <?php echo $this->Html->image("icons/ajax-loader1-stat.png"); ?>
-                <span><?php __d('users', 'Couldn\'t see'); ?></span>
+                <?php echo $this->Html->image("icon/ajax-loader1-stat.png"); ?>
+                <span><?php echo __( 'Couldn\'t see'); ?></span>
             </div>								
         </div>					
         <div class="" style="float:left;margin:0 5px 0 0;">	
-            <div><?php __d('users', 'Please type in the code'); ?></div>				
+            <div><?php __( 'Please type in the code'); ?></div>				
             <?php echo $this->Form->input('captcha', array('id' => 'ur-userCapchaReg', 'error' => false)); ?>								
         </div>
         <div id="rCap" class="ur-formWrapTip" style="width:185px;margin-top:17px;">	
             <div id="rCapTip" class="rTip hide">																	
-                <?php __d('users', 'Type the letters from picture'); ?>								  																	
+                <?php __( 'Type the letters from picture'); ?>								  																	
             </div>
             <div id="rCapError" class="rError <?php echo $errCapClass; ?>">
-                <?php __d('users', 'Please, correct the code.') ?>
+                <?php __( 'Please, correct the code.') ?>
             </div>
         </div>
 
@@ -203,7 +203,7 @@
             <?php echo $this->Form->input('tos', array('id' => 'ur-userTosReg', 'type' => 'checkbox', 'label' => false)); ?>
         </div>
         <div class="">
-            <?php echo $this->Form->label('User', __d('users', 'I have read and agreed to ', true) . $this->Html->link(__d('users', 'Terms of Service', true), array('plugin'=>false,'controller' => 'pages', 'action' => 'tos'))); ?>
+            <?php echo $this->Form->label('User', __( 'I have read and agreed to ', true) . $this->Html->link(__( 'Terms of Service', true), array('plugin'=>false,'controller' => 'pages', 'action' => 'tos'))); ?>
         </div>							
         <div id="reg_tosError" class="rError <?php echo $errEmailClass; ?>">
             <?php echo $this->Form->error('tos', $errors['tos'], array('wrap' => null)); ?>
@@ -211,7 +211,7 @@
 
     </div>
     <div class="ur-formSubmitReg">			
-        <span><?php echo $this->Form->button(__d('users', 'Submit', true), array('type' => 'submit', 'id' => 'ur-userSubmitReg')); ?></span>
+        <span><?php echo $this->Form->button(__( 'Submit', true), array('type' => 'submit', 'id' => 'ur-userSubmitReg')); ?></span>
     </div>
 
     <?php echo $this->Form->end(); ?>
