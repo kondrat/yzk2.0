@@ -406,7 +406,7 @@ class AuthComponent extends Component {
 			$className = $class . 'Authorize';
 			App::uses($className, $plugin . 'Controller/Component/Auth');
 			if (!class_exists($className)) {
-				throw new CakeException(__d('cake_dev', 'Authorization adapter "%s" was not found.', $class));
+				throw new CakeException(__d('cake_dev', 'Authorization adapter "%s" was not found. OK', $class));
 			}
 			if (!method_exists($className, 'authorize')) {
 				throw new CakeException(__d('cake_dev', 'Authorization objects must implement an authorize method.'));

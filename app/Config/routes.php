@@ -6,7 +6,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-        //Router::connect('/',array('plugin'=>null,'controller' => 'users', 'action' => 'login')); 
+        //Router::connect('/',array('plugin'=>null,'controller' => 'clients', 'action' => 'index')); 
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

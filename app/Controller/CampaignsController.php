@@ -1,14 +1,13 @@
 <?php
 
-App::import('Sanitize');
-
-App::uses('AppController', 'Controller');
+App::uses('Sanitize', 'Utility');
+//App::uses('AppController', 'Controller');
 
 class CampaignsController extends AppController {
 
-    var $name = 'Campaigns';
-    var $publicActions = array('getYnCampList', 'getYnCampInfo', 'getYnBanInfo', 'startStop', 'dayBud');
-    var $helpers = array('Text');
+    public $name = 'Campaigns';
+    public $publicActions = array('getYnCampList', 'getYnCampInfo', 'getYnBanInfo', 'startStop', 'dayBud');
+    public $helpers = array('Text');
     
     private $pathToCerts = null;
     /**
@@ -16,31 +15,43 @@ class CampaignsController extends AppController {
      * 
      * @var array
      */
-    public $components = array('setPrice', 'Users.Upload');
+    public $components = array(
+                                'setPrice', 
+                                'Upload'
+                                );
 
 //--------------------------------------------------------------------
 
     function beforeFilter() {
-
-        //default title
-        $this->set('title_for_layout', __('Campaigns', true));
-        //allowed actions
-        $this->Auth->allow('index', 'campaign', 'banner');
-
         parent::beforeFilter();
-        $this->Auth->autoRedirect = false;
+        //default title
+        $this->set('title_for_layout', __('Campaigns'));
+        //allowed actions
+        $this->Auth->allow( 'index',
+                            'campaign',
+                            'banner',
+                            'getYnCampList',
+                            'getYnCampInfo',
+                            'getYnBanInfo',
+                            'startStop',
+                            'dayBud'
+                );
+
+        
+        //$this->Auth->autoRedirect = false;
 
         // swiching off Security component for ajax call
 
         if ($this->RequestHandler->isAjax() && in_array($this->action, $this->publicActions)) {
             $this->Security->validatePost = false;
+            $this->Security->csrfCheck = false;
         }
 
-        $this->disableCache();
+        //$this->disableCache();
 
         //getting path to certificate
         
-        App::import('Model', 'Users.User');
+        App::import('Model', 'User');
         $user = new User;
         
         $certHolder = array();
@@ -90,12 +101,13 @@ class CampaignsController extends AppController {
         $certMd5 = $certHolder['User']['md5cert'];
 
         if (!$this->Upload->checkCertValidity($certNotBefore, $certNotAfter, $certMd5)) {
-            $this->Session->setFlash(__('You must upload valid yandex certificate to use system', TRUE), 'default', array('class' => 'fler'));
-            $this->redirect(array('plugin' => 'users', 'controller' => 'details', 'action' => 'index'), null, true);
+            $this->Session->setFlash(__('You must upload valid yandex certificate to use system'), 'default', array('class' => 'fler'));
+            $this->redirect(array('plugin' => null, 'controller' => 'details', 'action' => 'index'), null, true);
         } else {
-            $this->pathToCerts = APP . "certs" . DS . $certHolderId; 
+            $this->pathToCerts = APP . "Certs" . DS . $certHolderId;
         }       
-
+        
+        
 
     }
 
@@ -105,7 +117,7 @@ class CampaignsController extends AppController {
      */
     function index() {
 
-        $this->set('title_for_layout', __('Campaigns', true));
+        $this->set('title_for_layout', __('Campaigns'));
         $this->set('menuType', 'regged');
 
 //       $currentUser = $this->Campaign->User->find('all');
@@ -113,7 +125,7 @@ class CampaignsController extends AppController {
 
         $clientName = null;
 
-
+        
         if (isset($this->params['named']['client']) && $this->params['named']['client'] !== null) {
 
             if ($this->Auth->user('group_id') == 4) {
@@ -144,7 +156,7 @@ class CampaignsController extends AppController {
      * @access public
      */
     public function getYnCampList() {
-
+        
         $clientName = NULL;
 
         if ($this->RequestHandler->isAjax()) {
@@ -219,23 +231,7 @@ class CampaignsController extends AppController {
         }
     }
 
-    /**
-     * show info aboud cirtain campaign
-     * 
-     * @return type html
-     */
-    public function campaign() {
-//        $clientName = null;
-//        if( isset($this->params['named']['client']) && $this->params['named']['client'] !== null ){
-//            $clientName = $this->params['named']['client'];
-//            
-//        }
-//        $this->set('clientName',$clientName);
-        $this->set('title_for_layout', __('Campaign', true));
-        $this->set('menuType', 'regged');
 
-        //$authUserId = $this->Auth->user('id');
-    }
 
     /**
      * retriving data from api.direct.yandex.ru via ajax
@@ -284,22 +280,7 @@ class CampaignsController extends AppController {
         }
     }
 
-    /**
-     * show info aboud cirtain banner
-     * 
-     * @return type html
-     */
-    public function banner() {
-
-        $this->set('title_for_layout', __('Banner', true));
-        $this->set('menuType', 'regged');
-
-        //$authUserId = $this->Auth->user('id');
-
-
-
-        $this->set("modes", $this->setPrice->modes);
-    }
+ 
 
     /**
      * retriving data from api.direct.yandex.ru via ajax

@@ -295,16 +295,19 @@ class UsersController extends AppController {
 
         $this->set('title_for_layout', __('Login'));
         $this->set('menuType', 'login');
- 
+        
         if($this->Auth->user()){
+           
            return $this->redirect('/');
         }
         
         if ($this->request->is('post')) {
-            if ($this->Auth->login()) {
+            
+            if ($this->Auth->login()) {   
                 return $this->redirect($this->Auth->redirect());
             } else {
-                $this->Session->setFlash(__('Username or password is incorrect!'), 'default', array(), 'auth');
+                
+                $this->Session->setFlash(__('Username or password is incorrect2'), 'default', array(), 'auth');
             }
         }        
         

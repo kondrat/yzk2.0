@@ -5,7 +5,7 @@
  *
  * @author kondrat
  */
-class setPriceComponent extends Object {
+class setPriceComponent extends Component {
 
     /**
      *

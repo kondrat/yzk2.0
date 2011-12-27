@@ -23,7 +23,7 @@ class getYnDataComponent extends Component {
         
         
 
-        $url = "https://soap.direct.yandex.ru/json-api/v3/";
+        $url = "https://soap.direct.yandex.ru/json-api/v4/";
 
         //@todo sinitize this
         //$method = ''; //$this->data['method'];

@@ -4,7 +4,7 @@
        {{if StatusArch == 'No'}}
         <div  class="clt-client  span-17">
           
-            <div class="clt-login span-4"><?php echo $this->Html->link('${Login}', array("controller" => "campaigns", "action" => "index", "client" => '${Login}')); ?></div>
+            <div class="clt-login span-4"><?php echo $this->Html->link('${Login}', "/campaigns/index/client:\${Login}");?></div>
             <div class="clt-fio span-4">${FIO}</div>
             {{if Phone}}
             <div class="clt-phone span-3">${Phone}</div>
@@ -17,9 +17,9 @@
             <div class="clt-discount span-2">0%</div>
             {{/if}}
             {{if reg && reg == 'no'}}
-                <div class="clt-viewUsr clt-newCltReg span-1"><?php echo $this->Html->link(__('reg', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'regclient', "client" => '${Login}')); ?></div>
+                <div class="clt-viewUsr clt-newCltReg span-1"><?php echo $this->Html->link(__('reg'),"/campaigns/regclient/client:\${Login}"); ?></div>
             {{else}}
-                <div class="clt-viewUsr clt-cltDataEdit span-2"><?php __('view');?></div>
+                <div class="clt-viewUsr clt-cltDataEdit span-2"><?php echo __('view');?></div>
             {{/if}}
 
         </div>

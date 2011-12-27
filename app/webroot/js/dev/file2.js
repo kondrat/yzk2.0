@@ -20,6 +20,7 @@ jQuery(document).ready(function(){
         $.ajax({
             dataType:"json",
             url: path+"\/campaigns\/getYnCampList",
+            //url: "http:\/\/yzk.go\/campaigns\/getYnCampList",
             type: "POST",
             data: {
                 "data[clname]":$file2_campResWrp.data("clname")
@@ -444,7 +445,8 @@ jQuery(document).ready(function(){
         
         $.ajax({
             dataType:"json",
-            url: path+"\/phrases\/savePhrModeAll",
+            //url: path+"\/phrases\/savePhrModeAll",
+            url: "http:\/\/yzk.go\/phrases\/savePhrModeAll",
             type: "POST",
             data: modeData,
             success:function (data, textStatus) {

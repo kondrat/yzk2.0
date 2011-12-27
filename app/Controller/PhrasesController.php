@@ -5,29 +5,36 @@ App::import('Sanitize');
 class PhrasesController extends AppController {
 
     var $name = 'Phrases';
-    var $publicActions = array('savePhrMode','delPhr','savePhrModeAll');
+    var $publicActions = array('delPhr','savePhrModeAll');
     var $helpers = array();
     var $components = array('setPrice');
 
 //--------------------------------------------------------------------
 
     function beforeFilter() {
-
-        //default title
-        $this->set('title_for_layout', __('Phrases', true));
-        //allowed actions
-        //$this->Auth->allow('index', 'view');
-
         parent::beforeFilter();
-        $this->Auth->autoRedirect = false;
+        //default title
+        $this->set('title_for_layout', __('Phrases'));
+        //allowed actions
+        $this->Auth->allow(
+                            'index',
+                            'view',
+                            'savePhrModeAll',
+                            'delPhr'
+                                );
+
+        
+        //$this->Auth->autoRedirect = false;
 
         // swiching off Security component for ajax call
 
         if ($this->RequestHandler->isAjax() && in_array($this->action, $this->publicActions)) {
+            
             $this->Security->validatePost = false;
+            $this->Security->csrfCheck = false;
         }
 
-        $this->disableCache();
+        
     }
 
     /**
@@ -35,7 +42,7 @@ class PhrasesController extends AppController {
      * 
      */
     public function index() {
-        $this->set('title_for_layout', __('Phrases', true));
+        $this->set('title_for_layout', __('Phrases'));
 
         $authUserId = $this->Auth->user('id');
 
@@ -181,7 +188,7 @@ class PhrasesController extends AppController {
                 
              
             } else {
-               $content = array('error'=>__('Update mode failed',true)); 
+               $content = array('error'=>__('Update mode failed')); 
             }
         }
 

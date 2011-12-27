@@ -31,11 +31,21 @@ class DetailsController extends AppController {
         $this->set('title_for_layout', __('Users data'));
 
         parent::beforeFilter();
-        $this->Auth->allow();
+        //$this->Auth->allow();
 //        $this->Auth->autoRedirect = false;
 //        $this->Auth->loginError = "auth err";
     }
 
+    public function isAuthorized() {
+
+        if ('1' == '1') {
+            return true;
+        } else {
+            return false;
+        }
+        return false;
+    }
+    
     /**
      * Index
      *
